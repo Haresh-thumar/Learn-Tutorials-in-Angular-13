@@ -1,0 +1,119 @@
+<!--==============================================================================================
+                                          Interpolation
+===============================================================================================-->
+<!----- Example-1 ----->
+<h1>{{name}}</h1>
+
+<!----- Example-2 ----->
+<h1>{{1+1}}</h1>
+
+<!----- Example-3 ----->
+<img src="{{image}}" alt="">
+
+<!----- Example-4 ----->
+<p>{{show()}}</p>
+
+
+
+
+
+<!--==============================================================================================
+                                        Property Binding
+===============================================================================================-->
+<!----- Example-1 ----->
+<input type="text" [value]="fname">
+<br><br>
+
+<!----- Example-2 ----->
+<input type="text" [value]="1+1">
+<br><br>
+
+<!----- Example-3 ----->
+<img [src]="ourURL" alt="">
+<br><br>
+
+
+
+<!--==============================================================================================
+                                        Attribute Binding
+===============================================================================================-->
+<!----- Example-1 ----->
+<table border="1" width="150px" height="80px">
+  <tr>
+    <td [attr.colspan]="2">big</td>
+  </tr>
+  <tr>
+    <td>one</td>
+    <td>two</td>
+  </tr>
+</table>
+<br><br>
+
+<!----- Example -2 ----->
+<button [attr.aria-lable]="lbname">Pay</button>
+<br><br>
+
+
+
+<!--==============================================================================================
+                                          class Binding
+===============================================================================================-->
+<!----- Example-1 ----->
+<div [class]="myClass"></div>
+<br><br>
+
+<!----- Example-2 (conditional statement) ----->
+<div class="box" [class.border]="myBdr"></div><br>
+<button (click)="bdrShow()">Add Border</button>
+<br>
+
+
+
+<!--==============================================================================================
+                                          style binding
+===============================================================================================-->
+<!----- Example-1 ----->
+<h1 [style.color]="'red'"> hello </h1>
+
+<!----- Example-2 ----->
+<h1 [style.color]="myColor"> hello </h1>
+
+<!----- Example-3 ----->
+<h1 [style.color]="isOk? 'red' : 'green' "> hello </h1>
+
+<!----- Example-4 ----->
+<h1 [style.backgroundColor]="'#F5DF99'"> hello </h1>
+
+<h1 [style.backgroundColor]="'green'"> hello </h1>
+
+<h1 [style.background-color]="'orangeRed'"> hello </h1>
+
+
+
+
+<!--==============================================================================================
+                                          event binding
+===============================================================================================-->
+<!----- Example-1 ----->
+<button (click)="handleClick()"> click me </button>
+<br><br>
+
+<!----- Example-2 ----->
+<input (keyup)="handleEvent($event)" />
+<p>{{fName}}</p>
+<br>
+
+<!----- Example-3 ----->
+<input (keyup.enter)="handleEnterEvent($event)" />
+<p>{{lName}}</p>
+<br>
+
+<!----- Example-4 ----->
+<select (change)="changeItem($event)">
+  <option value="apple">Apple</option>
+  <option value="samsung">Samsung</option>
+  <option value="motorola">Motorola</option>
+</select>
+<p>{{selectedItem}}</p>
+<br>
+<br>
