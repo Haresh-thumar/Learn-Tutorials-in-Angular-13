@@ -49,7 +49,6 @@ export class OneWayDataBindingComponent implements OnInit {
     this.fName = val;
   }
 
-
   lName: string = '';
   ary: string[] = [];
   handleEnterEvent(event: any) {
@@ -64,6 +63,14 @@ export class OneWayDataBindingComponent implements OnInit {
     this.selectedItem = data;
     console.log(this.selectedItem);
   }
+
+
+
+
+
+
+
+
 
 
   constructor() { }

@@ -1,0 +1,15 @@
+<!-----====== practice example-1 =====----->
+<input type="text" (keyup)="setText($event)">
+<div>
+  <p>Font Size : {{textSize}}px</p>
+  <button (click)="setSize('dec')">-</button>
+  <button (click)="setSize('inc')">+</button>
+</div>
+<select (change)="setColor($event)">
+  <option value="primary">primary</option>
+  <option value="success">success</option>
+  <option value="danger">danger</option>
+  <option value="warning">warning</option>
+</select>
+<hr>
+<p [style.fontSize.px]="textSize">{{text}}</p>
