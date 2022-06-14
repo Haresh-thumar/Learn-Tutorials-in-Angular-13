@@ -1,15 +1,65 @@
-<!-----====== practice example-1 =====----->
-<input type="text" (keyup)="setText($event)">
-<div>
-  <p>Font Size : {{textSize}}px</p>
-  <button (click)="setSize('dec')">-</button>
-  <button (click)="setSize('inc')">+</button>
-</div>
-<select (change)="setColor($event)">
-  <option value="primary">primary</option>
-  <option value="success">success</option>
-  <option value="danger">danger</option>
-  <option value="warning">warning</option>
-</select>
-<hr>
-<p [style.fontSize.px]="textSize">{{text}}</p>
+<!--======================================================================================
+       example-1 (font size change on buton or range slider with change color)
+=======================================================================================-->
+<section>
+  <h1>* Change Font on input *</h1>
+  <input type="text" (keyup)="setText($event)">
+  <div>
+    <p>Font Size : {{textSize}}px</p>
+    <button class="plus-btn" (click)="setSize('dec')">-</button>
+    <button class="plus-btn" (click)="setSize('inc')">+</button>
+    <input (change)="setRangeSize($event)" type="range" min="10" max="150" value="10">
+  </div>
+  <br>
+  <select (change)="setColor($event)">
+    <option value="" [selected]="true">select color</option>
+    <option value="primary">primary</option>
+    <option value="success">success</option>
+    <option value="danger">danger</option>
+    <option value="warning">warning</option>
+  </select>
+  <br><br>
+
+  <p [style.fontSize.px]="textSize" [class]="textCls">{{text}}</p>
+  <br>
+  <hr>
+</section>
+
+
+<!--======================================================================================
+          example-2 (form & form submit with confirm message & after back to form)
+=======================================================================================-->
+<br>
+<section [class.hide]="isDataSubmitted">
+  <div class="input-group">
+    <label>Name</label>
+    <input type="name" name="name" (keyup)="setValue($event)" [value]="person.name">
+  </div>
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" name="email" (keyup)="setValue($event)" [value]="person.email">
+  </div>
+  <div class="input-group">
+    <label>Company Name</label>
+    <input type="text" name="cmp" (keyup)="setValue($event)" [value]="person.cmp">
+  </div>
+  <div class="input-group">
+    <label>Salary</label>
+    <input type="text" name="sal" (keyup)="setValue($event)" [value]="person.sal">
+  </div>
+
+  <button class="submit-btn" (click)="submitData()">Submit</button>
+</section>
+
+
+<br>
+<section [class.hide]="!isDataSubmitted">
+  <p>Thank you for your details</p>
+  <hr>
+  <p>Name: {{person.name}}</p>
+  <p>Email: {{person.email}}</p>
+  <p>Company Name: {{person.cmp}}</p>
+  <p>Salary: {{person.sal}}</p>
+
+  <button (click)="resetForm()">Back into Form</button>
+</section>

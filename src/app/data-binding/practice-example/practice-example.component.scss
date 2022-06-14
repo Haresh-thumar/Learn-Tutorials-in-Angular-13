@@ -1,6 +1,26 @@
- /*----- practice example - 1 -----*/
+ /*=================================================================
+                          example - 1 css
+  =================================================================*/
  .textSize {
    font-size: 10px;
+   font-weight: 600;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .plus-btn {
+   background: rgb(0, 167, 0);
+   border: 0;
+   font-size: 20px;
+   padding: 4px 10px 4px 10px;
+   border-radius: 50%;
+   margin: 5px;
+   color: #fff;
+   cursor: pointer;
+ }
+
+ .plus-btn:focus {
+   background-color: tomato;
+   outline: none;
  }
 
  .primary {
@@ -17,4 +37,38 @@
 
  .warning {
    color: yellow;
+ }
+
+
+
+
+
+ /*=================================================================
+                          example - 2 css
+  =================================================================*/
+ .input-group {
+   margin: 15px 0 10px 0;
+ }
+
+ .input-group>input {
+   width: 300px;
+   display: block;
+   padding: 10px;
+   margin-top: 5px;
+ }
+
+ .hide {
+   display: none;
+ }
+
+ .submit-btn {
+   background: skyblue;
+   padding: 10px 20px 10px 20px;
+   border: 0;
+   font-size: 14px;
+   border: 2px solid rgb(10, 112, 152);
+   font-weight: 600;
+   margin-top: 15px;
+   color: rgb(10, 112, 152);
+   cursor: pointer;
  }

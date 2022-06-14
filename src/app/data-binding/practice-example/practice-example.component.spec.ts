@@ -8,9 +8,9 @@ describe('PracticeExampleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PracticeExampleComponent ]
+      declarations: [PracticeExampleComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
