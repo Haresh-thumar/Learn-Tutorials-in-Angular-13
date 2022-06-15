@@ -4,17 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataBindingModule } from './data-binding/data-binding.module';
+import { DirectivesModule } from './directives/directives.module';
 import { ParentModuleModule } from './parentTochildData/parent-module.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ParentModuleModule,
-    DataBindingModule
+    DataBindingModule,
+    DirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
