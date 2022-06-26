@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttributeDirectivesComponent implements OnInit {
 
+  /*==============================================
+                       ng-style
+  ===============================================*/
   public myStyle = {
     width: '100px',
     height: '150px',
@@ -24,6 +27,43 @@ export class AttributeDirectivesComponent implements OnInit {
       this.myStyle['border'] = 'none';
     }, 3000)
   }
+
+
+  /*==============================================
+                       ng-class
+  ===============================================*/
+  myClasses = {
+    box: true,
+    border: false,
+    circle: false
+  }
+  // changeShape() {
+  //   this.myClasses.border = true;
+  //   this.myClasses.circle = true;
+  //   setTimeout(() => {
+  //     this.myClasses.border = false;
+  //     this.myClasses.circle = false;
+  //   }, 3000)
+  // }
+
+  /*--- or ---*/
+
+  changeShape() {
+    this.myClasses.border = !this.myClasses.border;
+    this.myClasses.circle = !this.myClasses.circle;
+    setTimeout(() => {
+      this.myClasses.border = false;
+      this.myClasses.circle = false;
+    }, 3000)
+  }
+
+
+
+
+
+
+
+
   constructor() { }
 
   ngOnInit(): void {

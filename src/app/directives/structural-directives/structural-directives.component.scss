@@ -1,0 +1,19 @@
+select {
+  width: 300px;
+  padding: 15px;
+}
+
+option {
+  font-size: 20px;
+  color: tomato;
+}
+
+.hide {
+  display: none;
+}
+
+.po-div {
+  display: inline-block;
+  width: 250px;
+  border-right: 2px solid gray;
+}

@@ -1,1 +1,45 @@
-<p>structural-directives works!</p>
+<!--=======================================================================================
+                                        *ng-if
+========================================================================================-->
+<!------------ Example-1 ----------->
+<select (change)="handleEvent($event)">
+  <option value="c">c</option>
+  <option value="c++">c++</option>
+  <option value="c#">c#</option>
+  <option value="java">Java</option>
+</select>
+
+<!-- <p [class.hide]="selectedSkill === ''">selected skill set is {{ selectedSkill }}</p> -->
+<p *ngIf="selectedSkill">selected skill set is {{ selectedSkill }}</p>
+<br>
+<hr><br><br>
+
+
+<!------------ Example-2 ----------->
+<div *ngIf="!isDataArrived">Loading...</div>
+<section *ngIf="isDataArrived">Your Data {{data}}</section>
+<br>
+<hr><br><br>
+
+
+
+<!--=======================================================================================
+                                        *ng-for
+========================================================================================-->
+<!-------- Example-1 (Print Array) -------->
+<ul>
+  <li *ngFor="let data of haresh">{{data}}</li>
+</ul>
+
+
+<!-------- Example-2 (Print Object) -------->
+<section>
+  <div class="po-div" *ngFor="let data of users, let a = index">
+    <p>No. {{a + 1}}</p>
+    <p>Name: {{data.name}}</p>
+    <p>Email: {{data.email}}</p>
+    <p>Skill: {{data.skill}}</p>
+    <button (click)="showAndEdit()">Show Detail/Edit</button>
+    <hr>
+  </div>
+</section>
