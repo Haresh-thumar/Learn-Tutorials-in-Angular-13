@@ -52,31 +52,60 @@ export class StructuralDirectivesComponent implements OnInit {
       name: 'Haresh',
       email: 'haresh@gmail.com',
       skill: 'html',
-      website: 'www.haresh.com'
+      website: 'www.haresh.in'
     },
     {
       name: 'Rutvik',
       email: 'rutvik@gmail.com',
       skill: 'css',
-      website: 'www.rutvik.com'
+      website: 'www.rutvik.net'
     },
     {
       name: 'Rushabh',
       email: 'rushabh@gmail.com',
       skill: 'angular',
-      website: 'www.rushabh.com'
+      website: 'www.rushabh.java'
     },
     {
       name: 'Rajan',
       email: 'rajan@gmail.com',
       skill: 'c#',
-      website: 'www.rajan.com'
+      website: 'www.rajan.py'
     }
-  ]
+  ];
+
+  currentUser = null;
+  isDisabled = true;
+
+  showAndEdit(indexNum) {
+    this.isDisabled = true;
+    this.currentUser = this.users[indexNum];
+  }
+
+  setValue(event) {
+    const value = event.target.value;
+    const keyName = event.target.name;
+    this.currentUser[keyName] = value;
+  }
+
+  enableEditing() {
+    this.isDisabled = false;
+  }
 
 
-  showAndEdit() {
 
+
+  /*=====================================================
+                      *ng-for
+  =====================================================*/
+  /*---------- Example-1 ----------*/
+  name: string = 'sagar';
+
+
+  /*---------- Example-2 ----------*/
+  currentTab: string = '';
+  openTab(tabName = '') {
+    this.currentTab = tabName;
   }
 
 

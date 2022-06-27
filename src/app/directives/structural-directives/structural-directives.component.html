@@ -39,7 +39,53 @@
     <p>Name: {{data.name}}</p>
     <p>Email: {{data.email}}</p>
     <p>Skill: {{data.skill}}</p>
-    <button (click)="showAndEdit()">Show Detail/Edit</button>
-    <hr>
+    <button (click)="showAndEdit(a)">Show Detail/Edit</button>
   </div>
 </section>
+<hr>
+
+<section *ngIf="currentUser">
+  Name<input type="text" (keyup)="setValue($event)" [value]="currentUser.name" [disabled]="isDisabled" name="name">
+  Email<input type="email" (keyup)="setValue($event)" [value]="currentUser.email" [disabled]="isDisabled" name="email">
+  Skill<input type="text" (keyup)="setValue($event)" [value]="currentUser.skill" [disabled]="isDisabled" name="skill">
+  Website<input type="text" (keyup)="setValue($event)" [value]="currentUser.website" [disabled]="isDisabled"
+    name="website">
+
+  <button (click)="enableEditing()">Enable Editing</button>
+</section>
+
+
+
+
+<!--=======================================================================================
+                                        *ng-switch
+========================================================================================-->
+<!-------- Example-1 ------->
+<section [ngSwitch]="name">
+  <p *ngSwitchCase="'ajit'">ajit is a kid boy</p>
+  <p *ngSwitchCase="'sagar'">sagar is a good boy</p>
+  <p *ngSwitchCase="'usha'">usha is pro girl</p>
+  <p *ngSwitchDefault>No Person Found! </p>
+</section>
+<br><br>
+
+
+<!-------- Example-2 ------->
+<section>
+  <nav>
+    <ul>
+      <li (click)="openTab()" [class.active]="currentTab === ''">Home</li>
+      <li (click)="openTab('about')" [class.active]="currentTab === 'about'">About</li>
+      <li (click)="openTab('profile')" [class.active]="currentTab === 'profile'">Profile</li>
+      <li (click)="openTab('contact')" [class.active]="currentTab === 'contact'">Contact</li>
+    </ul>
+  </nav>
+</section>
+
+<section [ngSwitch]="currentTab">
+  <div *ngSwitchCase="'about'">I am on About Section</div>
+  <div *ngSwitchCase="'profile'">My Profile</div>
+  <div *ngSwitchCase="'contact'">Conatct Page</div>
+  <div *ngSwitchDefault>Home Page Content</div>
+</section>
+<br><br><br>

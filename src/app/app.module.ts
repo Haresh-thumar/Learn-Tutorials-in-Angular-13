@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { DirectivesModule } from './directives/directives.module';
 import { ParentModuleModule } from './parentTochildData/parent-module.module';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PipesComponent,
 
   ],
   imports: [
