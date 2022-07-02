@@ -1,0 +1,10 @@
+<!--=================== Example-1 ==================-->
+<input type="text" #uname>
+<p>your name: {{name}}</p>
+<button (click)="show(uname.value)">submit</button>
+<br><br>
+<hr><br>
+
+<!--=================== Example-2 ==================-->
+<input type="text" #lname (keyup)="0">
+<p>your name: {{lname.value}}</p>

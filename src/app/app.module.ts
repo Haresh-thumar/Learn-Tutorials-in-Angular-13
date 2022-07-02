@@ -7,11 +7,13 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 import { DirectivesModule } from './directives/directives.module';
 import { ParentModuleModule } from './parentTochildData/parent-module.module';
 import { PipesComponent } from './pipes/pipes.component';
+import { TempleteReferenceVariableComponent } from './templete-reference-variable/templete-reference-variable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipesComponent,
+    TempleteReferenceVariableComponent,
 
   ],
   imports: [
