@@ -1,32 +1,124 @@
 <h1>pipes in angular</h1>
-<hr>
+<hr style="height: 2px; background: red;">
 
-<!------- Example-1 ------>
-<h4>{{name | uppercase}}</h4>
+<!--===================== Example-1 =====================-->
+<!--- text uppercase --->
+<h4>{{upCase | uppercase}}</h4>
 
-<!------- Example-2 ------>
-<h4>{{name | lowercase}}</h4>
+<!--- text lowercase --->
+<h4>{{lwCase | lowercase}}</h4>
 
-<!------- Example-3 ------>
-<h4>{{uname | titlecase}}</h4>
-
-<!------- Example-4 ------>
-<h3>{{today | date }}</h3> <!--- Full Date --->
-<h3>{{today | date: 'shortDate' }}</h3> <!--- Short Date --->
-<h3>{{today | date : 'fullDate'}}</h3> <!--- Date with Day Name --->
+<!--- text titlecase --->
+<h4>{{ttlCase | titlecase}}</h4>
+<hr class="custom-hr"><br>
 
 
 
+<!--===================== Example-2 =====================-->
+<!--- Full Date (Jul 2, 2022) --->
+<h3>{{today | date }}</h3>
 
-<!------- Example-3 ------>
+<!--- Short Date (7/2/2022) --->
+<h3>{{today | date: 'shortDate' }}</h3>
 
-<h2>{{name | slice : 3 : 7}}</h2>
+<!--- fulldate (Saturday, July 2, 2022) --->
+<h3>{{today | date : 'fullDate'}}</h3>
 
-<h3>{{user | json | uppercase}}</h3>
+<!--- short (7/2/22, 9:57 PM) --->
+<h3>{{today | date : 'short'}}</h3>
 
-<h3>{{2000.3000 | number : '2.2-3'}}</h3>
-<h3>{{200 | currency : 'USD'}}</h3>
-<h3>{{200 | currency : 'GBP'}}</h3>
-<h3>{{200 | currency : 'INR'}}</h3>
+<!--- medium (Jul 2, 2022, 9:57:21 PM)  --->
+<h3>{{today | date : 'medium'}}</h3>
 
-<h3>{{"hello how are you" | slice: 1 : 20}}</h3>
+<!--- long (July 2, 2022 at 9:57:21 PM GMT+5) --->
+<h3>{{today | date : 'long'}}</h3>
+
+<!--- format (02/07/2022) --->
+<h3>{{today | date : 'dd/MM/yyyy'}}</h3>
+
+<!--- format (09/02/2022) --->
+<h3>{{today | date : 'mm/dd/yyyy'}}</h3>
+
+<!--- format (2022/10/02) --->
+<h3>{{today | date : 'yyyy/mm/dd'}}</h3>
+
+<!--- shortTime (09:57 PM) --->
+<h3>{{today | date : 'shortTime'}}</h3>
+
+<!--- mediumTime (9:57:21 PM) --->
+<h3>{{today | date : 'mediumTime'}}</h3>
+
+<!--- fullTime (9:57:21 PM GMT+05:30) --->
+<h3>{{today | date : 'fullTime'}}</h3>
+
+<!--- Date with lowerCase (jul 2, 2022) --->
+<h3>{{today | date | lowercase}}</h3>
+
+<!--- Date with uppercase (JUL 2, 2022) --->
+<h3>{{today | date | uppercase}}</h3>
+<hr class="custom-hr"><br>
+
+
+
+<!--===================== Example-3 =====================-->
+<!--- variable with pipe --->
+<h2>{{slcText | slice : 2 : 7}}</h2>
+
+<!--- string with pipe --->
+<h2>{{"hello how are you" | slice: 1 : 15}}</h2>
+
+<!--- last character with pipe --->
+<h2>{{fullName | slice : -6}}</h2>
+
+<!--- last character with pipe --->
+<h2>{{fullName | slice : -6 : -2}}</h2>
+<hr class="custom-hr"><br>
+
+
+
+<!--===================== Example-4 =====================-->
+<!--- floating value --->
+<h4>{{num | number : '2.2-3'}}</h4>
+
+<!--- percentage value --->
+<h4>{{perc | percent : '2.0-0'}}</h4>
+<hr class="custom-hr"><br>
+
+
+
+<!--===================== Example-5 =====================-->
+<!--- currency symbol (₹300.00) --->
+<h3>{{amount | currency: 'INR':'symbol'}}</h3>
+
+<!--- currency symbol (INR 300.00) --->
+<h3>{{amount | currency: 'INR ':'code'}}</h3>
+
+<!--- currency symbol-narrow ($300.00) --->
+<h3>{{amount | currency: 'CAD':'symbol-narrow'}}</h3>
+
+<!--- currency with custom string (ruppes 300.00) --->
+<h3>{{amount | currency: 'CAD':'ruppes '}}</h3>
+<hr class="custom-hr"><br>
+
+
+
+<!--===================== Example-6 =====================-->
+<!--- print object using pipe --->
+<div *ngFor="let item of person | keyvalue">
+  <p>{{item.key}} - {{item.value}}</p>
+</div>
+
+<!--- slice value in array using pipe --->
+<ul>
+  <li *ngFor="let data of names | slice:0:3">{{data}}</li>
+</ul>
+
+
+
+<!--===================== Example-7 =====================-->
+<!------- json value convert in lowercase ------>
+<p>{{jsonValue | json | lowercase}}</p>
+
+
+<!------- json value convert in uppercase ------>
+<p>{{jsonValue | json | uppercase}}</p>

@@ -1,4 +1,6 @@
-
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 h4 {
   font-size: 20px;
@@ -10,4 +12,9 @@ h3 {
   font-size: 20px;
   line-height: 15px;
   color: rgb(233, 78, 17);
+}
+
+.custom-hr {
+  width: 30%;
+  float: left;
 }

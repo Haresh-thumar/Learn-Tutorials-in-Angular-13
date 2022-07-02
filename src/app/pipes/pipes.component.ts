@@ -7,23 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
 
-  /*------ Example-1,2 -------*/
-  name = 'Angular Basic Pipe';
+  /*================== Example-1 ==================*/
+  upCase = 'uppercase text';
+  lwCase = 'lowercase text';
+  ttlCase = 'titlecase text';
 
-  /*------ Example-3 -------*/
-  uname= 'title case pipe';
 
-  /*------ Example-3 -------*/
+  /*================== Example-2 ==================*/
   today = new Date();
 
 
+  /*================== Example-3 ==================*/
+  slcText = 'slice text';
+  fullName = "myNameIsHaresh";
 
-  user = {
+
+  /*================== Example-4 ==================*/
+  num = 223.15;
+  perc = 1.245;
+
+
+  /*================== Example-5 ==================*/
+  amount = 300;
+
+
+  /*================== Example-6 ==================*/
+  person: any = {
     name: 'haresh',
-    age: 25
+    age: 30,
+    sal: 45000
   }
+  names = ["haresh", "rushabh", "parth", "rajan", "rajesh"];
 
 
+  /*================== Example-7 ==================*/
+  jsonValue: any = {
+    name: 'haresh',
+    age: 30,
+    sal: 45000
+  }
 
   constructor() { }
 
