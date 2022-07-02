@@ -1,7 +1,7 @@
-<!--=======================================================================================
-                                        *ng-if
-========================================================================================-->
-<!------------ Example-1 ----------->
+<!--===========================================================================================================
+                                                      *ng-if
+============================================================================================================-->
+<!--================== Example-1 ==================-->
 <select (change)="handleEvent($event)">
   <option value="c">c</option>
   <option value="c++">c++</option>
@@ -15,24 +15,123 @@
 <hr><br><br>
 
 
-<!------------ Example-2 ----------->
+<!--================== Example-2 ==================-->
 <div *ngIf="!isDataArrived">Loading...</div>
 <section *ngIf="isDataArrived">Your Data {{data}}</section>
+
+
+
+<!---================ Example - 3 =================-->
+<!-- use *ngIf condition -->
+<input type="radio" name="radio1" (click)="changeValue(true)"> True
+<br>
+<input type="radio" name="radio2" (click)="changeValue(false)"> False
+
+<div *ngIf="isValid">
+  this is valid data
+</div>
+<div *ngIf="!isValid">
+  this is not valid data
+</div>
+
+
+
+<!---================ Example - 4 =================-->
+<!-- use *ngIf with else condition -->
+<input type="radio" name="radio1" (click)="changeValue(true)"> True
+<br>
+<input type="radio" name="radio2" (click)="changeValue(false)"> False
+<br><br>
+<div *ngIf="isValid; else elseblock">
+  this is valid data
+</div>
+
+<ng-template #elseblock>
+<div>
+  this is not valid data using else block
+</div>
+</ng-template>
+
+
+
+<!---================ Example - 5 ==================-->
+<!-- use *ngIf with then else condition -->
+<input type="radio" name="radio1" (click)="changeValue(true)"> True
+<br>
+<input type="radio" name="radio2" (click)="changeValue(false)"> False
+<br><br>
+
+<div *ngIf="isValid; then thenblock; else elseblock">
+  <ng-template #thenblock>
+    <div>
+      this is valid data
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #elseblock>
+  <div>
+    this is not valid data using else block
+  </div>
+</ng-template>
+
+
+
+<!---=============== Example - 6 ===================-->
+<button (click)="clicksome(true)">if</button>
+<button (click)="clicksome(false)">else</button>
+
+<ng-container *ngIf="isLoggedIn; then userloggedIn; else userloggedOut">
+</ng-container>
+<ng-template #userloggedIn>
+  <div>
+    Hello User
+  </div>
+</ng-template>
+<ng-template #userloggedOut>
+  <div>
+    Please Login
+  </div>
+</ng-template>
+
+
+
+
+<!---================= Example - 7 =================-->
+<button class="btn-success" (click)="onCreateBlock()">Create Block</button>
+<br><br>
+<div *ngIf="isValid; then thenblock else elseblock"></div>
+<ng-template #thenblock>
+  <div>block has been created and block name is my block.</div>
+</ng-template>
+<ng-template #elseblock>
+  <div>no block has been created yet.</div>
+</ng-template>
+
+
+
+
 <br>
 <hr><br><br>
 
 
 
-<!--=======================================================================================
-                                        *ng-for
-========================================================================================-->
-<!-------- Example-1 (Print Array) -------->
+
+
+
+
+
+
+<!--======================================================================================================================
+                                                            *ng-for
+========================================================================================================================-->
+<!--================== Example-1 (Print Array) ==================-->
 <ul>
   <li *ngFor="let data of haresh">{{data}}</li>
 </ul>
 
 
-<!-------- Example-2 (Print Object) -------->
+<!--================= Example-2 (Print Object) =================-->
 <section>
   <div class="po-div" *ngFor="let data of users, let a = index">
     <p>No. {{a + 1}}</p>
@@ -55,12 +154,133 @@
 </section>
 
 
+<!--======================== Example - 3 (method-1) =======================-->
+<ul>
+  <li><h2> * For Loop (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let i=index; let f=first; let l=last;">
+    {{i + 1}} - {{student.name}} - {{f}} - {{l}}
+  </li>
+</ul>
 
 
-<!--=======================================================================================
-                                        *ng-switch
-========================================================================================-->
-<!-------- Example-1 ------->
+<!--======================== Example - 4 (method-2) ========================-->
+<ul>
+  <li><h2> * For Loop (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; index as i; first as f; last as l;">
+    {{i + 1}} - {{student.name}} - {{f}} - {{l}}
+  </li>
+</ul>
+
+
+<!--====================== Example - 5 (get only index) ====================-->
+<!--- method-1 --->
+<ul>
+  <li><h2> * Get Only Index (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let i=index;">
+    {{i + 1}} - {{student.name}}
+  </li>
+</ul>
+<!--- method-2 --->
+<ul>
+  <li><h2> * Get Only Index (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; index as i;">
+    {{i + 1}} - {{student.name}}
+  </li>
+</ul>
+
+
+<!--================== Example - 6 (get first value true) ==================-->
+<!--- method-1 --->
+<ul>
+  <li><h2> * get first value true (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let f=first;">
+    {{student.name}} - {{f}}
+  </li>
+</ul>
+<!--- method-2 --->
+<ul>
+  <li><h2> * get first value true (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; first as f;">
+    {{student.name}} - {{f}}
+  </li>
+</ul>
+
+
+<!--================== Example - 7 (get last value true) ===================-->
+<!--- method-1 --->
+<ul>
+  <li><h2> * get last value true (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let f=last;">
+    {{student.name}} - {{f}}
+  </li>
+</ul>
+<!--- method-2 --->
+<ul>
+  <li><h2> * get last value true (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; last as f;">
+    {{student.name}} - {{f}}
+  </li>
+</ul>
+
+
+<!--================== Example - 8 (get even value true) ===================-->
+<!--- method-1 --->
+<ul>
+  <li><h2> * get even value true (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let e=even;">
+    {{student.name}} - {{e}}
+  </li>
+</ul>
+<!--- method-2 --->
+<ul>
+  <li><h2> * get even value true (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; even as e;">
+    {{student.name}} - {{e}}
+  </li>
+</ul>
+
+
+<!--=================== Example - 9 (get odd value true) ===================-->
+<!--- method-1 --->
+<ul>
+  <li><h2> * get odd value true (Method - 1)</h2></li>
+  <li *ngFor="let student of Students; let o=odd;">
+    {{student.name}} - {{o}}
+  </li>
+</ul>
+<!--- method-2 --->
+<ul>
+  <li><h2> * get odd value true (Method - 2)</h2></li>
+  <li *ngFor="let student of Students; odd as o;">
+    {{student.name}} - {{o}}
+  </li>
+</ul>
+
+
+
+<!--=================== Example - 10 (TrackBy ngFor) ===================-->
+<table border="1">
+  <tr *ngFor="let item of students; let i=index; trackBy:trackByStudentid">
+    <td>{{i+1}}</td>
+    <td>{{item.studentId}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.age}}</td>
+    <td>{{item.course}}</td>
+  </tr>
+</table>
+<br>
+<button (click)="getMoreStudents()">Get More Student</button>
+
+
+
+
+
+
+<!--=========================================================================================================================
+                                                            *ng-switch
+==========================================================================================================================-->
+<!--================== Example-1 ==================-->
 <section [ngSwitch]="name">
   <p *ngSwitchCase="'ajit'">ajit is a kid boy</p>
   <p *ngSwitchCase="'sagar'">sagar is a good boy</p>
@@ -70,7 +290,7 @@
 <br><br>
 
 
-<!-------- Example-2 ------->
+<!--================== Example-2 ==================-->
 <section>
   <nav>
     <ul>
@@ -88,4 +308,21 @@
   <div *ngSwitchCase="'contact'">Conatct Page</div>
   <div *ngSwitchDefault>Home Page Content</div>
 </section>
-<br><br><br>
+<br><br>
+
+
+<!--================== Example-3 ==================-->
+<select (change)="saveValue($event)">
+  <option value="">-- Select --</option>
+  <option value="one">one</option>
+  <option value="two">two</option>
+  <option value="three">three</option>
+  <option value="another">another</option>
+</select>
+
+<div [ngSwitch]="choose">
+  <h3 *ngSwitchCase="'one'">First</h3>
+  <h3 *ngSwitchCase="'two'">Second</h3>
+  <h3 *ngSwitchCase="'three'">Third</h3>
+  <h3 *ngSwitchDefault>Default</h3>
+</div>

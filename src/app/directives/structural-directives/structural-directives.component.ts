@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructuralDirectivesComponent implements OnInit {
 
-  /*=====================================================
-                          *ng-if
-  =====================================================*/
+  /*=========================================================================================================
+                                                        *ng-if
+  =========================================================================================================*/
   /*--------- Example-1 ---------*/
   selectedSkill = '';
 
@@ -23,9 +23,9 @@ export class StructuralDirectivesComponent implements OnInit {
   data: string = '';
   isDataArrived: boolean = false;
 
-  constructor() {
-    this.getDat();
-  }
+  // constructor() {
+  //   this.getDat();
+  // }
 
   ngOnInit(): void {
   }
@@ -37,11 +37,32 @@ export class StructuralDirectivesComponent implements OnInit {
     }, 3000)
   }
 
+  /*--------- Example-3,4,5,7 ---------*/
+  isValid: boolean = false;
+  //  isValid:boolean = true;
+  thenblock: any;
+
+  changeValue(valid: any) {
+    this.isValid = valid;
+  }
+
+  /*--------- Example-6 ---------*/
+  userLoggedIn: boolean = true;
+  isLoggedIn: boolean = true;
+
+  clicksome(data: any) {
+    this.isLoggedIn = data;
+  }
+
+  onCreateBlock() {
+    this.isValid = true;
+  }
 
 
-  /*=====================================================
-                        *ng-for
-  =====================================================*/
+
+  /*=========================================================================================================
+                                                    *ng-for
+  =========================================================================================================*/
   /*------------ Example-1 -----------*/
   haresh: string[] = ["haresh", "rushabh", "rutvik", "parth", "rajan", "rajesh"];
 
@@ -93,11 +114,119 @@ export class StructuralDirectivesComponent implements OnInit {
   }
 
 
+  /*------------ Example-3,4,5,6,7,8,9 -----------*/
+  Students: any[] = [
+    {
+      'name': 'Rahul Kumar'
+    },
+    {
+      'name': 'Ajeet Kumar'
+    },
+    {
+      'name': 'Rohan Kumar'
+    },
+    {
+      'name': 'Mukesh Kumar'
+    },
+    {
+      'name': 'Chandan Kumar'
+    },
+    {
+      'name': 'Soni Kumari'
+    }
+  ];
 
 
-  /*=====================================================
-                      *ng-for
-  =====================================================*/
+  /*------------ Example-10 -----------*/
+  students: any[];
+
+  constructor() {
+    this.students=[
+      {
+        studentId: 1,
+        name: 'Chandan',
+        gender: 'male',
+        age: 22,
+        course: 'BCA'
+      },
+      {
+        studentId: 2,
+        name: 'Rahul',
+        gender: 'male',
+        age: 23,
+        course: 'MCA'
+      },
+      {
+        studentId: 3,
+        name: 'Rutvik',
+        gender: 'male',
+        age: 24,
+        course: 'BSC.IT'
+      },
+    ];
+  }
+
+  getMoreStudents():void {
+    this.students=[
+      {
+        studentId: 1,
+        name: 'Chandan',
+        gender: 'male',
+        age: 22,
+        course: 'BCA'
+      },
+      {
+        studentId: 2,
+        name: 'Rahul',
+        gender: 'male',
+        age: 23,
+        course: 'MCA'
+      },
+      {
+        studentId: 3,
+        name: 'Rutvik',
+        gender: 'male',
+        age: 24,
+        course: 'BSC.IT'
+      },
+      {
+        studentId: 4,
+        name: 'Parth',
+        gender: 'male',
+        age: 25,
+        course: 'PGDCA'
+      },
+      {
+        studentId: 5,
+        name: 'Haresh',
+        gender: 'male',
+        age: 26,
+        course: 'DIPLOMA'
+      },
+      {
+        studentId: 1,
+        name: 'Chandan',
+        gender: 'male',
+        age: 22,
+        course: 'BCA'
+      },
+    ];
+  }
+
+  trackByStudentid(index:number, student:any): string{
+    return student.studentId;
+  }
+
+
+
+
+
+
+
+
+  /*=========================================================================================================
+                                                    *ng-for
+  =========================================================================================================*/
   /*---------- Example-1 ----------*/
   name: string = 'sagar';
 
@@ -109,6 +238,11 @@ export class StructuralDirectivesComponent implements OnInit {
   }
 
 
+  /*---------- Example-3 ----------*/
+  public choose = '';
+  saveValue(drp: any) {
+    this.choose = drp.target.value;
+  }
 
 
 
