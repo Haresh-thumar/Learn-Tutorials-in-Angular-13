@@ -1,1 +1,32 @@
-<p>pipes works!</p>
+<h1>pipes in angular</h1>
+<hr>
+
+<!------- Example-1 ------>
+<h4>{{name | uppercase}}</h4>
+
+<!------- Example-2 ------>
+<h4>{{name | lowercase}}</h4>
+
+<!------- Example-3 ------>
+<h4>{{uname | titlecase}}</h4>
+
+<!------- Example-4 ------>
+<h3>{{today | date }}</h3> <!--- Full Date --->
+<h3>{{today | date: 'shortDate' }}</h3> <!--- Short Date --->
+<h3>{{today | date : 'fullDate'}}</h3> <!--- Date with Day Name --->
+
+
+
+
+<!------- Example-3 ------>
+
+<h2>{{name | slice : 3 : 7}}</h2>
+
+<h3>{{user | json | uppercase}}</h3>
+
+<h3>{{2000.3000 | number : '2.2-3'}}</h3>
+<h3>{{200 | currency : 'USD'}}</h3>
+<h3>{{200 | currency : 'GBP'}}</h3>
+<h3>{{200 | currency : 'INR'}}</h3>
+
+<h3>{{"hello how are you" | slice: 1 : 20}}</h3>
