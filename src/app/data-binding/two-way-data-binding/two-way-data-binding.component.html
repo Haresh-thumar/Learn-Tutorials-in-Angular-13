@@ -1,1 +1,11 @@
-<p>two-way-data-binding works!</p>
+<!--============================ Example-1 ==============================-->
+<input type="text" #data (keyup)="0">
+<br><br>
+your name : {{data.value}}<br><br><br>
+
+
+
+<!--============================ Example-2 ==============================-->
+<input type="text" [(ngModel)]="item">
+
+<p>name : {{item}}</p>
