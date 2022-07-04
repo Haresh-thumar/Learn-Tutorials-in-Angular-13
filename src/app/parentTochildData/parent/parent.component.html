@@ -1,8 +1,25 @@
-<h1>Life cycle Hook | ngOnChanges</h1>
+<!--======================= Example-1 (print Array & Object using class) =======================-->
+<button (click)="getObj();">click to change Array value</button><br><br><hr><br>
 
-<app-child [item]="studentDetail" [arrList]="myArr"></app-child>
 
-<!-- <button (click)="getData()">click to change object value</button>
-<button (click)="getAry();">click to change object value</button> -->
+<!--======================= Example-2 (print Array & Object using class) =======================-->
+<button (click)="getAry();">click to change object value</button><br><br><hr><br>
 
-<button (click)="getData(); getAry();">click to change object & Array value</button>
+
+<!--======================= Example-3 (print String using Input) ===============================-->
+Enter Your Name: <input type="text" (keyup)="passValue($event)"><br><br><hr><br>
+
+
+<!--======================= Example-4 (print Array Using Input) ================================-->
+Enter Array Item: <input type="text" (keyup.enter)="addHeroAry($event)"><br><br><hr><br>
+
+
+<!--======================= Example-5 (print Object Using Input) ===============================-->
+Enter Object Item: <input type="text" (keyup.enter)="addHeroObj($event)"><br><br><hr><br>
+
+
+
+
+
+
+<app-child [item]="studentDetail" [arrList]="myArr" [name]="data" [myHeroAry]="heroAry" [myHeroObj]="heroObj"></app-child>

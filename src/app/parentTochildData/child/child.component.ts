@@ -7,11 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
+/*================= Example-1,2,3 ===================*/
+  @Input() public item: any;
+  @Input() public arrList: any = [];
+  @Input() public name:string;
+  @Input('myHeroAry') public myHeroAry:string[] = []; //custom rename variable name;
+  @Input('myHeroObj') public myHeroObj:any = {}; //custom rename variable name;
+
+
   currValue: string = "";
   prevValue: string = "";
 
-  @Input() public item: any;
-  @Input() public arrList: any = [];
 
   constructor() {
     console.warn("child constructure is called");

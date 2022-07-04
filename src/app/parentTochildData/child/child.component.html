@@ -1,14 +1,34 @@
-<p>child works!</p>
-
-<!-------- print the object --------->
+<!--=================== Example-1 (print the object) ===================-->
 <ul>
   <li>{{item.studentName}}</li>
   <li>{{item.studentAge}}</li>
   <li>{{item.studentMobile}}</li>
 </ul>
+<hr><br><br>
 
 
-<!---------- print the Array -------->
+<!--=================== Example-2 (print the Array) ===================-->
 <div *ngFor="let data of arrList">
   <p>{{data}}</p>
 </div>
+<hr><br><br>
+
+
+<!--=================== Example-3 (print the string) ===================-->
+<h4>Your Name: {{name}}</h4>
+<hr><br><br>
+
+
+<!--=================== Example-4 (print Array using Input) ===================-->
+<h3>Print Array Using Input:</h3>
+<ul>
+  <li *ngFor="let hero of myHeroAry">{{hero}}</li>
+</ul>
+<hr><br><br>
+
+
+<!--=================== Example-5 (print object using Input) ===================-->
+<h3>Print Object Using Input:</h3>
+
+<p>Name: {{ myHeroObj.name }} - id: {{ myHeroObj.id }}</p>
+<hr><br><br>
