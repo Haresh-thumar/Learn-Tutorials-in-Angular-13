@@ -8,6 +8,7 @@ import { DirectivesModule } from './directives/directives.module';
 import { ParentModuleModule } from './parentTochildData/parent-module.module';
 import { PipesComponent } from './pipes/pipes.component';
 import { TempleteReferenceVariableComponent } from './templete-reference-variable/templete-reference-variable.component';
+import { ChildToParentModule } from './childToparentData/child-to-parent.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { TempleteReferenceVariableComponent } from './templete-reference-variabl
     AppRoutingModule,
     ParentModuleModule,
     DataBindingModule,
-    DirectivesModule
+    DirectivesModule,
+    ChildToParentModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

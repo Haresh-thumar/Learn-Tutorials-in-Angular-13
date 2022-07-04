@@ -60,7 +60,7 @@ export class ParentComponent implements OnInit {
     const heroObjName = event.target.value;
     this.heroObj = {
       name: heroObjName,
-      i: Math.random()
+      id: Math.random()
     };
   }
 

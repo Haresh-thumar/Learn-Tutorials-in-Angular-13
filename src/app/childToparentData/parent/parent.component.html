@@ -1,0 +1,11 @@
+<h1>Favourite Food</h1>
+
+
+<!--=========================== Example-1 ==========================-->
+<ul>
+  <li *ngFor="let fdItem of foods">
+    {{fdItem}}
+  </li>
+</ul>
+
+<app-child-component (foodEvt)="afterFoodAdd($event)"></app-child-component>
