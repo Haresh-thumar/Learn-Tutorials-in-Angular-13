@@ -1,3 +1,4 @@
+<!--========================== Example-1 ===========================-->
 Enter Game Name: <input type="text" (keyup.enter)="addGame(gameInput.value)" #gameInput>
 
 <app-child-input-output [games]="game" (delEvt)="removeGame($event)"></app-child-input-output>
@@ -5,3 +6,17 @@ Enter Game Name: <input type="text" (keyup.enter)="addGame(gameInput.value)" #ga
 <hr>
 
 <p *ngIf="deletedGame">you remove : {{deletedGame}}</p>
+
+
+
+
+<!--========================== Example-2 (two-way-data-binding) ===========================-->
+<h1>Enter Product Qty</h1>
+<input type="text" #inp [value]="data">
+<button (click)="addToQty(inp.value)">Add Qty</button>
+
+<p>
+  <strong>Total Qty :</strong> {{data}}
+</p>
+<hr>
+<app-child-input-output [(item)]="data"></app-child-input-output>
