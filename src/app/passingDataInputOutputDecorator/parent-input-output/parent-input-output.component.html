@@ -1,0 +1,7 @@
+Enter Game Name: <input type="text" (keyup.enter)="addGame(gameInput.value)" #gameInput>
+
+<app-child-input-output [games]="game" (delEvt)="removeGame($event)"></app-child-input-output>
+
+<hr>
+
+<p *ngIf="deletedGame">you remove : {{deletedGame}}</p>

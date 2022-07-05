@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let gameItem of gameArr; let i = index;">
+    {{gameItem}} <button (click)="delGame(i)">Delete</button>
+  </li>
+</ul>
