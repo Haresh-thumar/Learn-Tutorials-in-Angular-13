@@ -1,19 +1,29 @@
 <!--======================= Example-1 =======================-->
-<ng-template *ngIf="isLoggedIn">
-  <p>I a'm Logged In...</p>
+<ng-template [ngIf]="isLoggedIn">
+    <h2>I a'm ngIf part with Bracket...</h2>
 </ng-template>
 
-<ng-template *ngIf="!isLoggedIn">
-  <p>You are Guest...</p>
+<ng-template [ngIf]="!isLoggedIn">
+  <p>I a'm ngIf else part with Bracket...</p>
 </ng-template>
+<hr>
 
+<!--======================= Example-1 =======================-->
+<div *ngIf="isLoggedIn">
+  <h2>I a'm ngIf part without bracket...</h2>
+</div>
 
+<ng-template [ngIf]="!isLoggedIn">
+<p>I a'm ngIf condition single bracket part...</p>
+</ng-template>
+<hr>
 
 <!--======================= Example-2 =======================-->
-<ng-template *ngIf="isLoggedIn; else elseblock">
+<div *ngIf="isLoggedIn; else elseblock">
   <p>I a'm Logged In...</p>
-</ng-template>
+</div>
 
 <ng-template #elseblock>
-  <p>You are Guest...</p>
+  <p>You are Else Block...</p>
 </ng-template>
+<hr>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ng-templete',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgTempleteComponent implements OnInit {
 
-  isLoggedIn:boolean = true
+  isLoggedIn:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
