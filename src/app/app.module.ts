@@ -10,12 +10,14 @@ import { PipesComponent } from './pipes/pipes.component';
 import { TempleteReferenceVariableComponent } from './templete-reference-variable/templete-reference-variable.component';
 import { ChildToParentModule } from './childToparentData/child-to-parent.module';
 import { ParentChildInputOutputModule } from './passingDataInputOutputDecorator/parent-child-input-output.module';
+import { NgTempleteComponent } from './ng-templete/ng-templete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipesComponent,
     TempleteReferenceVariableComponent,
+    NgTempleteComponent,
 
   ],
   imports: [

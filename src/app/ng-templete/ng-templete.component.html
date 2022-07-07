@@ -1,0 +1,19 @@
+<!--======================= Example-1 =======================-->
+<ng-template *ngIf="isLoggedIn">
+  <p>I a'm Logged In...</p>
+</ng-template>
+
+<ng-template *ngIf="!isLoggedIn">
+  <p>You are Guest...</p>
+</ng-template>
+
+
+
+<!--======================= Example-2 =======================-->
+<ng-template *ngIf="isLoggedIn; else elseblock">
+  <p>I a'm Logged In...</p>
+</ng-template>
+
+<ng-template #elseblock>
+  <p>You are Guest...</p>
+</ng-template>
