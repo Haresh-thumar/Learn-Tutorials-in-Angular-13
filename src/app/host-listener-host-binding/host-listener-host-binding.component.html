@@ -1,0 +1,18 @@
+<!--============================================================================================
+                                          @HostListener
+=============================================================================================-->
+<h1>Hello, you have pressed enter {{counter}} number of times!</h1>
+Press enter key to increment the counter.
+<button (click)="resetCounter()">Reset Counter</button>
+<br><br><br>
+<hr><br><br>
+
+
+
+
+<!--============================================================================================
+                                          @HostBinding
+=============================================================================================-->
+Type any: <input type="text" #appRainbow />
+
+<h1 *ngIf="appRainbowShow">{{appRainbow.value}}</h1>

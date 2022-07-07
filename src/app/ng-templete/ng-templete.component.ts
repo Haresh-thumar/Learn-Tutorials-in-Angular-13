@@ -7,7 +7,10 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 })
 export class NgTempleteComponent implements OnInit {
 
-  isLoggedIn:boolean = false;
+  /*======================= Example-1 =======================*/
+  isLoggedIn: boolean = false;
+
+
 
   constructor() { }
 

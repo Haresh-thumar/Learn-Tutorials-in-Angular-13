@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, HostListener } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { TempleteReferenceVariableComponent } from './templete-reference-variabl
 import { ChildToParentModule } from './childToparentData/child-to-parent.module';
 import { ParentChildInputOutputModule } from './passingDataInputOutputDecorator/parent-child-input-output.module';
 import { NgTempleteComponent } from './ng-templete/ng-templete.component';
+import { HostListenerHostBindingComponent } from './host-listener-host-binding/host-listener-host-binding.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgTempleteComponent } from './ng-templete/ng-templete.component';
     PipesComponent,
     TempleteReferenceVariableComponent,
     NgTempleteComponent,
+    HostListenerHostBindingComponent,
 
   ],
   imports: [
@@ -34,3 +36,4 @@ import { NgTempleteComponent } from './ng-templete/ng-templete.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
+
