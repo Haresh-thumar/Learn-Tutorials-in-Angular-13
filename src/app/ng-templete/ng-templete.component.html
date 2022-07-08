@@ -1,41 +1,57 @@
 <!--======================= Example-1 =======================-->
 <ng-template [ngIf]="isLoggedIn">
-    <h2>I a'm ngIf part with Bracket...</h2>
+  <h2 [class]="'green'">I a'm ngIf part with Bracket...</h2>
 </ng-template>
 
 <ng-template [ngIf]="!isLoggedIn">
-  <p>I a'm ngIf else part with Bracket...</p>
+  <p [class]="'red'">I a'm ngIf else part with Bracket...</p>
 </ng-template>
 <hr>
 
 <!--======================= Example-2 =======================-->
 <div *ngIf="isLoggedIn">
-  <h2>I a'm ngIf part without bracket...</h2>
+  <h2 [class]="'green'">I a'm ngIf part without bracket...</h2>
 </div>
 
 <ng-template [ngIf]="!isLoggedIn">
-<p>I a'm ngIf condition single bracket part...</p>
+  <p [class]="'red'">I a'm ngIf condition single bracket part...</p>
 </ng-template>
 <hr>
 
 <!--======================= Example-3 =======================-->
 <div *ngIf="isLoggedIn; else elseblock">
-  <p>I a'm Logged In...</p>
+  <h2 [class]="'green'">I a'm Logged In...</h2>
 </div>
 
 <ng-template #elseblock>
-  <p>You are Else Block...</p>
+  <p [class]="'red'">You are Else Block...</p>
 </ng-template>
 <hr>
 
 
-<!--======================= Example-3 =======================-->
+<!--======================= Example-4 =======================-->
 <div *ngIf="isLoggedIn; then profile else logout"></div>
 
+<!-- angular convert this type -->
+<ng-template [ngIf]="isLoggedIn" [ngIfThen]="profile" [ngIfElse]="logout"></ng-template>
+
 <ng-template #profile>
-  profile page
+  <h2 [class]="'green'">profile page</h2>
 </ng-template>
 
 <ng-template #logout>
-  logout page
+  <p [class]="'red'">logout page</p>
+</ng-template>
+<hr><br>
+
+
+
+<!--======================= Example-5 =======================-->
+<div *ngFor="let item of names">
+  {{item}}
+</div>
+
+<!-- angular convert this type -->
+<ng-template ngFor let-name let-i="index" [ngForOf]="names">
+  <div>{{name}}</div>
 </ng-template>

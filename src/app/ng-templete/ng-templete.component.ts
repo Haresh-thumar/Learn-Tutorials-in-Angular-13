@@ -7,8 +7,13 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 })
 export class NgTempleteComponent implements OnInit {
 
-  /*======================= Example-1 =======================*/
-  isLoggedIn: boolean = false;
+  /*======================= Example-1,2,3,4 =======================*/
+  isLoggedIn: boolean = true;
+
+
+
+  /*======================= Example-5 =======================*/
+  names: string[] = ["haresh", "rutvik", "rushabh", "rajan", "rajesh", "parth"];
 
 
 
