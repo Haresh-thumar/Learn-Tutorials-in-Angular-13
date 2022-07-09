@@ -16,6 +16,15 @@ export class NgTempleteComponent implements OnInit {
   names: string[] = ["haresh", "rutvik", "rushabh", "rajan", "rajesh", "parth"];
 
 
+  /*======================= Example-6 =======================*/
+  name: string = 'h';
+
+
+  /*======================= Example-7 =======================*/
+  show: boolean = true;
+  update() {
+    this.show = !this.show;
+  }
 
   constructor() { }
 

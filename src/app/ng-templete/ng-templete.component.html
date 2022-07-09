@@ -55,3 +55,38 @@
 <ng-template ngFor let-name let-i="index" [ngForOf]="names">
   <div>{{name}}</div>
 </ng-template>
+<br>
+<hr>
+
+<!--======================= Example-6 =======================-->
+<div [ngSwitch]="name">
+  <p *ngSwitchCase="'h'">Haresh</p>
+  <p *ngSwitchCase="'r'">Rutvik</p>
+  <p *ngSwitchCase="'p'">Parth</p>
+  <p *ngSwitchDefault>I am nothing</p>
+</div>
+
+<!--angular behind the seen working-->
+<div [ngSwitch]="name">
+  <ng-template [ngSwitchCase]="'h'">
+    <p>Haresh</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'r'">
+    <p>Rutvik</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'p'">
+    <p>Parth</p>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <p>I am nothing</p>
+  </ng-template>
+</div>
+<hr>
+
+
+<!--======================= Example-7 =======================-->
+<button (click)="update()">Show/Hide</button>
+
+<ng-template [ngIf]="show">
+  <app-counter></app-counter>
+</ng-template>
