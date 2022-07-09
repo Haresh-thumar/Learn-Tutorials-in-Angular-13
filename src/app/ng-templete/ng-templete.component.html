@@ -1,6 +1,6 @@
 <!--======================= Example-1 =======================-->
 <ng-template [ngIf]="isLoggedIn">
-    <h2>I a'm ngIf part with Bracket...</h2>
+  <h2>I a'm ngIf part with Bracket...</h2>
 </ng-template>
 
 <ng-template [ngIf]="!isLoggedIn">
@@ -14,7 +14,7 @@
 </div>
 
 <ng-template [ngIf]="!isLoggedIn">
-<p>I a'm ngIf condition single bracket part...</p>
+  <p>I a'm ngIf condition single bracket part...</p>
 </ng-template>
 <hr>
 
@@ -29,7 +29,7 @@
 <hr>
 
 
-<!--======================= Example-3 =======================-->
+<!--======================= Example-4 =======================-->
 <div *ngIf="isLoggedIn; then profile else logout"></div>
 
 <ng-template #profile>
@@ -38,4 +38,39 @@
 
 <ng-template #logout>
   logout page
+</ng-template>
+<br>
+<hr>
+
+<!--======================= Example-4 =======================-->
+<div [ngSwitch]="name">
+  <p *ngSwitchCase="'h'">Haresh</p>
+  <p *ngSwitchCase="'r'">Rutvik</p>
+  <p *ngSwitchCase="'p'">Parth</p>
+  <p *ngSwitchDefault>I am nothing</p>
+</div>
+
+<!--angular behind the seen working-->
+<div [ngSwitch]="name">
+  <ng-template [ngSwitchCase]="'h'">
+    <p>Haresh</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'r'">
+    <p>Rutvik</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'p'">
+    <p>Parth</p>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <p>I am nothing</p>
+  </ng-template>
+</div>
+<hr>
+
+
+<!--======================= Example-5 =======================-->
+<button (click)="update()">Show/Hide</button>
+
+<ng-template [ngIf]="show">
+  <app-counter></app-counter>
 </ng-template>

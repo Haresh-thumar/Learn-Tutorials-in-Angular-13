@@ -7,10 +7,19 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 })
 export class NgTempleteComponent implements OnInit {
 
-  /*======================= Example-1 =======================*/
+  /*======================= Example-1,2,3 =======================*/
   isLoggedIn: boolean = false;
 
 
+  /*======================= Example-4 =======================*/
+  name:string = 'h';
+
+
+  /*======================= Example-4 =======================*/
+  show:boolean = true;
+  update(){
+    this.show = !this.show;
+  }
 
   constructor() { }
 

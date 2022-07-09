@@ -12,6 +12,8 @@ import { ChildToParentModule } from './childToparentData/child-to-parent.module'
 import { ParentChildInputOutputModule } from './passingDataInputOutputDecorator/parent-child-input-output.module';
 import { NgTempleteComponent } from './ng-templete/ng-templete.component';
 import { HostListenerHostBindingComponent } from './host-listener-host-binding/host-listener-host-binding.component';
+import { CounterComponent } from './ng-templete/counter/counter.component';
+import { NgContainerComponent } from './ng-container/ng-container.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HostListenerHostBindingComponent } from './host-listener-host-binding/h
     TempleteReferenceVariableComponent,
     NgTempleteComponent,
     HostListenerHostBindingComponent,
-
+    CounterComponent,
+    NgContainerComponent,
   ],
   imports: [
     BrowserModule,
