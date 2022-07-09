@@ -14,6 +14,7 @@ import { NgTempleteComponent } from './ng-templete/ng-templete.component';
 import { HostListenerHostBindingComponent } from './host-listener-host-binding/host-listener-host-binding.component';
 import { CounterComponent } from './ng-templete/counter/counter.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
+import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgContainerComponent } from './ng-container/ng-container.component';
     HostListenerHostBindingComponent,
     CounterComponent,
     NgContainerComponent,
+    NgTemplateOutletComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<ng-template #brand let-data let-person="name">
+  <section class="brand">
+    <img src="https://picsum.photos/200" alt="">
+    <h3> {{person}}</h3>
+  </section>
+</ng-template>
+
+
+<!--====================== Header ====================-->
+<header>
+  <ng-container *ngTemplateOutlet="brand; context: Brand1"></ng-container>
+
+  <nav>
+    <ul>
+      <li>About</li>
+      <li>Profile</li>
+      <li>Log out</li>
+    </ul>
+  </nav>
+</header>
+
+
+<!--====================== Content ====================-->
+<section>
+  <form action="#">
+    <legend>
+      <ng-container *ngTemplateOutlet="brand; context: Brand2"></ng-container>
+    </legend>
+    <hr>
+    Email: <input type="text"><br><br>
+    Password <input type="text">
+  </form>
+</section>
+<hr>
+
+<!--====================== Footer ====================-->
+<footer>
+  <ng-container *ngTemplateOutlet="brand; context: Brand3"></ng-container>
+  <p>company info here &copy; 2019</p>
+</footer>
