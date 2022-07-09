@@ -1,3 +1,4 @@
+<!--================================== Example-1 =============================-->
 <div>
   <b>I am main hero of the Angular</b>
 </div>
@@ -7,3 +8,32 @@
     {{client.name}} | {{client.money}}
   </p>
 </ng-container>
+
+<!---angular conversion in ng-template--->
+<ng-template ngFor let-client [ngForOf]="clients">
+  <ng-container>
+    <ng-template [ngIf]="client.paid">
+      <p>{{client.name}} | {{client.money}}</p>
+    </ng-template>
+  </ng-container>
+</ng-template>
+
+
+
+<!--================================== Example-2 (using ul) =============================-->
+<ul>
+  <ng-container *ngFor="let client of clients">
+    <li *ngIf="client.paid"> {{client.name}} | {{client.money}} </li>
+  </ng-container>
+</ul>
+
+
+<!--================================== Example-3 (using table) =============================-->
+<table>
+  <ng-container *ngFor="let client of clients">
+    <tr *ngIf="client.paid">
+      <td> {{client.name}} </td>
+      <td> {{client.money}} </td>
+    </tr>
+  </ng-container>
+</table>
