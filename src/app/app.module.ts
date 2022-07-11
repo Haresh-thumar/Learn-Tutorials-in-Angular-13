@@ -16,6 +16,8 @@ import { CounterComponent } from './ng-templete/counter/counter.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 import { ChildComponent } from './ng-template-outlet/child/child.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { InputComponent } from './content-projection/input/input.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ChildComponent } from './ng-template-outlet/child/child.component';
     NgContainerComponent,
     NgTemplateOutletComponent,
     ChildComponent,
+    ContentProjectionComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,

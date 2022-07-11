@@ -1,0 +1,38 @@
+<h1>I am parent</h1>
+
+<hr><br>
+
+<!--=====================================================================================
+                                  Single slot projection
+======================================================================================-->
+<!-- <app-input bg="primary" lable="Email Address" hint="Your email is required">
+  <input type="text" (keyup.enter)="changeHandler($event)" placeholder="company email">
+</app-input>
+<br>
+<app-input bg="warn" lable="password" hint="Secret...">
+  <input type="password" (keyup.enter)="changeHandler($event)" placeholder="password">
+</app-input>
+<br>
+<app-input bg="accent" lable="phone" hint="Indian numbers only">
+  <input type="number" (keyup.enter)="changeHandler($event)">
+</app-input>
+<br>
+<hr><br> -->
+
+<!--=====================================================================================
+                                  multi slot projection
+======================================================================================-->
+<app-input bg="primary">
+  <label> Email Address </label>
+  <input type="text" (keyup.enter)="changeHandler($event)" placeholder="company email">
+  <small> Your Company Email </small>
+</app-input>
+<br>
+<app-input bg="warn" lable="password" hint="Secret...">
+  <input type="password" (keyup.enter)="changeHandler($event)" placeholder="password">
+</app-input>
+<br>
+<app-input bg="accent" lable="phone" hint="Indian numbers only">
+  <input type="number" (keyup.enter)="changeHandler($event)">
+</app-input>
+<br>

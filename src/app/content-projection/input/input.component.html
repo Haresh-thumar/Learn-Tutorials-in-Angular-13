@@ -1,0 +1,21 @@
+<!--=====================================================================================
+                                  Single slot projection
+======================================================================================-->
+<!-- <div class="form-control {{bg}}">
+  <label> {{ lable }} </label>
+  <ng-content></ng-content>
+  <small> {{hint}} </small>
+</div> -->
+
+
+
+<!--=====================================================================================
+                                  multi slot projection
+======================================================================================-->
+<div class="form-control {{bg}}">
+  <ng-content select="label"></ng-content>
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <ng-content select="small"></ng-content>
+</div>
