@@ -8,7 +8,7 @@
 <ng-template [ngTemplateOutlet]="template1">
   <div></div>
 </ng-template>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
 
 
 
@@ -22,7 +22,7 @@
 
 <ng-container [ngTemplateOutlet]="Template2" [ngTemplateOutletContext]="{value:'1000'}">
 </ng-container>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
 
 
 
@@ -37,7 +37,7 @@
 <ng-container [ngTemplateOutlet]="Template3"
   [ngTemplateOutletContext]="{nameVar:'Guest',messageVar:'Welcome to our site'}">
 </ng-container>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
 
 
 
@@ -52,7 +52,7 @@
 <ng-container [ngTemplateOutlet]="template4"
   [ngTemplateOutletContext]="{ person:{name:'Haresh',message:'Welcome to World'} }">
 </ng-container>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
 
 
 
@@ -66,11 +66,11 @@
 <ng-container [ngTemplateOutlet]="template5"
   [ngTemplateOutletContext]="{$implicit:'Rutvik',message:'Welcome to our company'}">
 </ng-container>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
 
 
 <!---====================================================================================
-                                  use Multiple time
+                        use Multiple time using varible & object
 ======================================================================================-->
 <ng-template #brand let-data let-person="name">
   <section class="brand">
@@ -81,7 +81,9 @@
 
 <!--====================== Header ====================-->
 <header>
-  <ng-container *ngTemplateOutlet="brand; context: Brand1"></ng-container>
+  <!-- <ng-container *ngTemplateOutlet="brand; context: Brand1"></ng-container> -->
+  <ng-container *ngTemplateOutlet="brand; context: {name: 'haresh Brand'}"></ng-container>
+
   <nav>
     <ul>
       <li>About</li>
@@ -91,11 +93,13 @@
   </nav>
 </header>
 
+
 <!--====================== Content ====================-->
 <section>
   <form action="#">
     <legend>
-      <ng-container *ngTemplateOutlet="brand; context: Brand2"></ng-container>
+      <!-- <ng-container *ngTemplateOutlet="brand; context: Brand2"></ng-container> -->
+      <ng-container *ngTemplateOutlet="brand; context: {name: 'Rutvik Brand'}"></ng-container>
     </legend>
     <hr>
     Email: <input type="text"><br><br>
@@ -106,33 +110,41 @@
 
 <!--====================== Footer ====================-->
 <footer>
-  <ng-container *ngTemplateOutlet="brand; context: Brand3"></ng-container>
+  <!-- <ng-container *ngTemplateOutlet="brand; context: Brand3"></ng-container> -->
+  <ng-container *ngTemplateOutlet="brand; context: {name: 'Parth Brand'}"></ng-container>
   <p>company info here &copy; 2019</p>
 </footer>
-<hr style="background-color: red;">
+<hr style="border-top: 2px solid red;">
+
+
+<!---====================================================================================
+                                      use $implicit
+======================================================================================-->
+<ng-template #uname let-name="$implicit">
+  <section>
+    <img src="https://picsum.photos/200" alt="img">
+    <h3>{{name}}</h3>
+  </section>
+</ng-template>
+
+<section>
+  <ng-container *ngTemplateOutlet="uname; context: {$implicit: 'Sign up'}"></ng-container>
+</section>
+<hr style="border-top: 2px solid red;">
 
 
 
 <!---====================================================================================
-                                  use Multiple time
+                      print multiple value in object using $implicit
 ======================================================================================-->
-<h1>ngTemplateOutlet Example</h1>
-<label for="mode">Display Mode:</label>
-<select [(ngModel)]="mode">
-  <option *ngFor="let item of modeOptions" [ngValue]="item.mode">{{item.mode}}</option>
-</select>
-<ng-template let-items #cardTemplate>
-  <div *ngFor="let item of items">
-    <h1>{{item.header}}</h1>
-    <p>{{item.content}}</p>
-  </div>
+<ng-template #uname let-data let-s="size" let-name>
+  <section>
+    <img src="https://picsum.photos/{{s}}" alt="img">
+    <h3>{{name}}</h3>
+  </section>
 </ng-template>
-<ng-template let-items #listTemplate>
-  <ul>
-    <li *ngFor="let item of items">
-      <strong>{{item.header}} </strong> ( {{item.content}} )
-    </li>
-  </ul>
-</ng-template>
-<item-view [itemTemplate]="template" [items]="items">
-</item-view>
+
+<section>
+  <ng-container *ngTemplateOutlet="uname; context: {$implicit: 'Sign up', size: 400}"></ng-container>
+</section>
+<hr style="border-top: 2px solid red;">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,8 +7,6 @@ import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Input() items: any[] = [];
-  @Input() itemTemplate: TemplateRef<HTMLElement>;
 
   constructor() { }
 
