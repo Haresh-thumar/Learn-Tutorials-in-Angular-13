@@ -19,10 +19,11 @@
 <br>
 <hr><br> -->
 
+
 <!--=====================================================================================
                                   multi slot projection
 ======================================================================================-->
-<app-input bg="primary">
+<!-- <app-input bg="primary">
   <label> Email Address </label>
   <input type="text" (keyup.enter)="changeHandler($event)" placeholder="company email">
   <small> Your Company Email </small>
@@ -35,4 +36,13 @@
 <app-input bg="accent" lable="phone" hint="Indian numbers only">
   <input type="number" (keyup.enter)="changeHandler($event)">
 </app-input>
-<br>
+<br> -->
+
+
+
+<!--=====================================================================================
+                              use multi component projection
+======================================================================================-->
+<app-input>
+  <app-content-counter></app-content-counter>
+</app-input>

@@ -8,9 +8,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class InputComponent implements OnInit {
 
   @Input() bg = 'primary';
-  @Input() lable = '';
-  @Input() hint = '';
-  @Output() changeEvt = new EventEmitter<any>();
+  // @Input() lable = '';
+  // @Input() hint = '';
+  // @Output() changeEvt = new EventEmitter<any>();
 
   constructor() { }
 

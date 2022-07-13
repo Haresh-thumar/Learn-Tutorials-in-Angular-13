@@ -12,10 +12,20 @@
 <!--=====================================================================================
                                   multi slot projection
 ======================================================================================-->
-<div class="form-control {{bg}}">
+<!-- <div class="form-control {{bg}}">
   <ng-content select="label"></ng-content>
   <div>
     <ng-content></ng-content>
   </div>
   <ng-content select="small"></ng-content>
+</div> -->
+
+
+
+<!--=====================================================================================
+                              use multi component projection
+======================================================================================-->
+<div class="form-control {{bg}}">
+  <ng-content></ng-content>
 </div>
+

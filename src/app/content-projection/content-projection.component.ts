@@ -12,8 +12,8 @@ export class ContentProjectionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeHandler(evt) {
-    console.log('parent', evt.target.value);
-  }
+  // changeHandler(evt) {
+  //   console.log('parent', evt.target.value);
+  // }
 
 }
