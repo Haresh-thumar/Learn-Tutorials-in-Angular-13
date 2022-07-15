@@ -15,6 +15,10 @@ import { ContentCounterComponent } from './content-counter/content-counter.compo
   imports: [
     CommonModule
   ],
+  exports: [
+    ContentProjectionComponent,
+    InputComponent,
+    ContentCounterComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class ContentModule { }

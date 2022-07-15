@@ -23,9 +23,20 @@
 
 
 <!--=====================================================================================
-                              use multi component projection
+                    use multi component projection using Templateref
 ======================================================================================-->
-<div class="form-control {{bg}}">
-  <ng-content></ng-content>
-</div>
+<!-- <div class="form-control {{bg}}">
+  <button (click)="toggle()">Toggle</button>
+  <ng-content *ngIf="show"></ng-content>
+</div> -->
 
+
+
+<!--=====================================================================================
+                use multi component projection with radio button & Template
+======================================================================================-->
+<ng-content #name></ng-content>
+
+<ng-container *ngFor="let value of values">
+  <ng-container *ngTemplateOutlet="template; context: {$implicit: value, iname: name}"></ng-container>
+</ng-container>

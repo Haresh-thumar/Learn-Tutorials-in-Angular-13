@@ -41,8 +41,28 @@
 
 
 <!--=====================================================================================
-                              use multi component projection
+                      use multi component projection using Templateref
 ======================================================================================-->
-<app-input>
+<!-- <app-input>
   <app-content-counter></app-content-counter>
+</app-input> -->
+
+
+
+<!--=====================================================================================
+                use multi component projection with radio button & Template
+======================================================================================-->
+<ng-template #radioTemplate let-name let-n="iname">
+  <input type="radio" [name]="n">
+  {{name}}
+</ng-template>
+
+<app-input name="gender" [template]="radioTemplate" [value]="['male', 'female', 'other']">
+  <label>Gender : </label>
+</app-input>
+
+<hr>
+
+<app-input name="food" [template]="radioTemplate" [values]="['veg', 'non-veg']">
+  <label>Food type : </label>
 </app-input>

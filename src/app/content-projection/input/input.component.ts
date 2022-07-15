@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -11,6 +11,24 @@ export class InputComponent implements OnInit {
   // @Input() lable = '';
   // @Input() hint = '';
   // @Output() changeEvt = new EventEmitter<any>();
+
+  /*=====================================================================================
+                      use multi component projection using Templateref
+  ======================================================================================*/
+  // show: boolean = true;
+
+  // toggle() {
+  //   this.show = !this.show;
+  // }
+
+
+  /*=====================================================================================
+              use multi component projection with radio button & Template
+  ======================================================================================*/
+  @Input() template: TemplateRef<any>;
+  @Input() values: string[];
+  @Input() name: string;
+
 
   constructor() { }
 
