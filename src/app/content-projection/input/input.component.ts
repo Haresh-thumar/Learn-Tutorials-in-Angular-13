@@ -25,9 +25,9 @@ export class InputComponent implements OnInit {
   /*=====================================================================================
               use multi component projection with radio button & Template
   ======================================================================================*/
-  @Input() template: TemplateRef<any>;
-  @Input() values: string[];
-  @Input() name: string;
+  // @Input() template: TemplateRef<any>;
+  // @Input() values: string[];
+  // @Input() name: string;
 
 
   constructor() { }

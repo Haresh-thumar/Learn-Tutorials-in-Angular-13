@@ -1,0 +1,11 @@
+#commitbox {
+  padding: 4px;
+}
+
+#commitbox>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  width: 350px;
+  margin: 5px;
+}

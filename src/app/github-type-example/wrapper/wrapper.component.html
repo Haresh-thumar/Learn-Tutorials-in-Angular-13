@@ -1,0 +1,16 @@
+<section>
+  <header>
+    <h3>
+      Repo Name:
+      <ng-content></ng-content>
+    </h3>
+    <div></div>
+  </header>
+
+  <section id="container">
+    <ng-container *ngFor="let name of [1,2,3]">
+      <ng-template *ngTemplateOutlet="ListTemplate"></ng-template>
+    </ng-container>
+
+  </section>
+</section>

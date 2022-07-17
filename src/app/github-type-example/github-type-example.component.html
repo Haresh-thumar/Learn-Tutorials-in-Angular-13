@@ -1,0 +1,24 @@
+<h3>My Angular App</h3>
+
+<section id="commitbox">
+  <div>
+    <label>Dir/File Name</label>
+    <input type="text" #dir>
+  </div>
+  <div>
+    <label>Dir/File Name</label>
+    <input type="text" #msg>
+  </div>
+  <button (click)="updateRepo(dir.value, msg.value)">Push Changes</button>
+</section>
+
+<hr>
+
+<ng-template #list>
+  <app-list></app-list>
+</ng-template>
+
+
+<app-wrapper [ListTemplate]="list">
+  <small>NgStudio</small>
+</app-wrapper>

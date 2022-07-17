@@ -17,6 +17,8 @@ import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 import { ChildComponent } from './ng-template-outlet/child/child.component';
 import { ContentModule } from './content-projection/content.module';
+import { GithubTypeExampleComponent } from './github-type-example/github-type-example.component';
+import { GithubModule } from './github-type-example/github.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ContentModule } from './content-projection/content.module';
     NgContainerComponent,
     NgTemplateOutletComponent,
     ChildComponent,
+    GithubTypeExampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ContentModule } from './content-projection/content.module';
     DirectivesModule,
     ChildToParentModule,
     ParentChildInputOutputModule,
-    ContentModule
+    ContentModule,
+    GithubModule
   ],
   providers: [],
   bootstrap: [AppComponent],
