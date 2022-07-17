@@ -22,6 +22,13 @@ export class GithubTypeExampleComponent implements OnInit {
       isFile: dir.includes('.'),
       time: new Date()
     });
+
+    this.update = {
+      name: dir,
+      msg,
+    };
   }
+
+
 
 }
