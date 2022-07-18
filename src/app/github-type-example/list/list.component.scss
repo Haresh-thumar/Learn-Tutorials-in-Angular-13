@@ -1,0 +1,39 @@
+section {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+section>div {
+  padding: 5px;
+}
+
+span {
+  width: 20px;
+  height: 15px;
+  display: block;
+}
+
+.file {
+  border-radius: 100%;
+  border: 2px solid #000;
+}
+
+.dir {
+  position: relative;
+  top: 5px;
+  background: orange;
+}
+
+.dir::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: orange;
+  position: relative;
+  top: -5px;
+}

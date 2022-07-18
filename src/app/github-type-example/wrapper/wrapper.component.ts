@@ -8,7 +8,7 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 export class WrapperComponent implements OnInit {
 
   @Input() ListTemplate: TemplateRef<any>;
-  @Input() newUpdate: {};
+  @Input() newUpdate: any = {};
 
   constructor() { }
 

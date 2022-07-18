@@ -4,13 +4,16 @@
       Repo Name:
       <ng-content></ng-content>
     </h3>
-    <div></div>
+    <div *ngIf="newUpdate.history">
+      {{newUpdate.name}} | {{newUpdate.msg}}
+    </div>
   </header>
 
-  <section id="container">
-    <ng-container *ngFor="let name of [1,2,3]">
-      <ng-template *ngTemplateOutlet="ListTemplate"></ng-template>
-    </ng-container>
+  <section id="container" *ngIf="newUpdate.history">
+    <ng-container *ngFor="let update of newUpdate.history">
+      <ng-container *ngTemplateOutlet="ListTemplate; context: {$implicit: update}">
 
+      </ng-container>
+    </ng-container>
   </section>
 </section>

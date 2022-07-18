@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { dir } from 'console';
 
 @Component({
   selector: 'app-github-type-example',
@@ -8,15 +7,15 @@ import { dir } from 'console';
 })
 export class GithubTypeExampleComponent implements OnInit {
 
-  history = [];
-  update = {};
+  history: any = [];
+  update: any = {};
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateRepo(dur, msg) {
+  updateRepo(dir, msg) {
     this.history.push({
       name: dir,
       isFile: dir.includes('.'),
@@ -26,6 +25,7 @@ export class GithubTypeExampleComponent implements OnInit {
     this.update = {
       name: dir,
       msg,
+      history: this.history
     };
   }
 

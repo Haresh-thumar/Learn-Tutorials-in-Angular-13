@@ -6,7 +6,7 @@
     <input type="text" #dir>
   </div>
   <div>
-    <label>Dir/File Name</label>
+    <label>Commit Message</label>
     <input type="text" #msg>
   </div>
   <button (click)="updateRepo(dir.value, msg.value)">Push Changes</button>
@@ -14,8 +14,8 @@
 
 <hr>
 
-<ng-template #list>
-  <app-list></app-list>
+<ng-template #list let-update>
+  <app-list [item]="update"></app-list>
 </ng-template>
 
 
