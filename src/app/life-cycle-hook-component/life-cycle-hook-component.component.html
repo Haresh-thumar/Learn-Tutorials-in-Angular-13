@@ -1,0 +1,18 @@
+<!--=============================================================================================
+                    Constructure Life Cycle Hook with @Attribute Decorator
+==============================================================================================-->
+<app-constructure-component itype="email"></app-constructure-component>
+<hr>
+
+
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook with @Attribute Decorator
+==============================================================================================-->
+<select (change)="uid = sid.value;" #sid>
+  <option selected disabled>No Value Selected</option>
+  <option [value]="id" *ngFor="let id of [1,2,3,4]">{{id}}</option>
+</select>
+
+Name: <input type="text" (change)="name = uname.value" #uname>
+
+<app-ng-on-change-component [userId]="uid" [userName]="name"></app-ng-on-change-component>

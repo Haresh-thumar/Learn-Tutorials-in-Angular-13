@@ -19,6 +19,7 @@ import { ChildComponent } from './ng-template-outlet/child/child.component';
 import { ContentModule } from './content-projection/content.module';
 import { GithubTypeExampleComponent } from './github-type-example/github-type-example.component';
 import { GithubModule } from './github-type-example/github.module';
+import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { GithubModule } from './github-type-example/github.module';
     ChildToParentModule,
     ParentChildInputOutputModule,
     ContentModule,
-    GithubModule
+    GithubModule,
+    LifeCycleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
