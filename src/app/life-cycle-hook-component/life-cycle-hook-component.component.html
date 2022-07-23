@@ -1,18 +1,35 @@
 <!--=============================================================================================
                     Constructure Life Cycle Hook with @Attribute Decorator
 ==============================================================================================-->
-<app-constructure-component itype="email"></app-constructure-component>
-<hr>
+<!-- <app-constructure-component itype="email"></app-constructure-component> -->
+<!-- <hr> -->
+
 
 
 <!--=============================================================================================
-                    ngOnChanges Life Cycle Hook with @Attribute Decorator
+                    ngOnChanges Life Cycle Hook using json data
 ==============================================================================================-->
-<select (change)="uid = sid.value;" #sid>
+<!-- <select (change)="uid = sid.value;" #sid>
   <option selected disabled>No Value Selected</option>
   <option [value]="id" *ngFor="let id of [1,2,3,4]">{{id}}</option>
 </select>
-
 Name: <input type="text" (change)="name = uname.value" #uname>
+<app-ng-on-change-component [userId]="uid" [userName]="name"></app-ng-on-change-component> -->
 
-<app-ng-on-change-component [userId]="uid" [userName]="name"></app-ng-on-change-component>
+
+
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook with FirstChange (initial value)
+==============================================================================================-->
+<!-- <app-ng-on-change-component [user]="user" *ngFor="let user of users" (nameEvt)="onNameChange($event)">
+</app-ng-on-change-component> -->
+
+
+
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook with Setter & Getter
+==============================================================================================-->
+Name: <input type="text" (keyup.enter)="0" #name><br><br>
+DOB: <input type="date" (keyup.enter)="0" #dob>
+
+<app-ng-on-change-component [name]="name.value" [dob]="dob.value"></app-ng-on-change-component>

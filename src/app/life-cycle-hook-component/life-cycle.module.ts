@@ -12,6 +12,6 @@ import { NgOnInitComponentComponent } from './ng-on-init-component/ng-on-init-co
   imports: [
     CommonModule
   ],
-  exports: [LifeCycleHookComponentComponent, ConstructureComponentComponent,],
+  exports: [LifeCycleHookComponentComponent, ConstructureComponentComponent, NgOnChangeComponentComponent, NgOnInitComponentComponent],
 })
 export class LifeCycleModule { }

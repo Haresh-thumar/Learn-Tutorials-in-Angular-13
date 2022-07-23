@@ -1,1 +1,34 @@
-<p>ng-on-change-component works!</p>
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook using json data
+==============================================================================================-->
+<!-- <ng-container *ngIf="user">
+  <h1>user Detail</h1>
+
+  <p>Name: {{user['name']}}</p>
+  <p>Name: {{user['email']}}</p>
+  <p>Name: {{user['address']}}</p>
+</ng-container> -->
+
+
+
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook with FirstChange (initial value)
+==============================================================================================-->
+<!-- Name: {{user.name}}
+Id: {{user.id}}
+<br>
+
+<input type="text" (change)="changeName(name.value); name.value=''" #name>
+<button (click)="resetName()">Reset Name</button>
+
+<hr> -->
+
+
+
+<!--=============================================================================================
+                    ngOnChanges Life Cycle Hook with Setter & Getter
+==============================================================================================-->
+<p><strong>Name: </strong>{{uname}}</p>
+<p><strong>Age: </strong>{{age}}</p>
+<p><strong>DOB: </strong>{{dob}}</p>
+<p>{{message}}</p>
