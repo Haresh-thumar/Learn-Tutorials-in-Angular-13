@@ -51,7 +51,13 @@ export class LifeCycleHookComponentComponent implements OnInit {
 
 
   /*----------------------------------------------------------------------
-            ngOnChanges Life Cycle Hook with Setter & Getter
+        ngOnChanges Life Cycle Hook with Setter & Getter (Part-1)
+  ----------------------------------------------------------------------*/
+
+
+
+    /*----------------------------------------------------------------------
+        ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
   ----------------------------------------------------------------------*/
 
 

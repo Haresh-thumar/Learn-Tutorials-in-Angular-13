@@ -93,7 +93,7 @@ export class NgOnChangeComponentComponent implements OnChanges {
 
 
   /*----------------------------------------------------------------------
-          ngOnChanges Life Cycle Hook with Setter & Getter
+        ngOnChanges Life Cycle Hook with Setter & Getter (Part-1)
   ----------------------------------------------------------------------*/
   private _name!: string;
   private _dob!: string;
@@ -137,5 +137,10 @@ export class NgOnChangeComponentComponent implements OnChanges {
     const currentDate = new Date().getTime();
     return Math.floor((currentDate - dob) / (1000 * 60 * 60 * 24 * 365));
   }
-
 }
+
+
+
+ /*----------------------------------------------------------------------
+        ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
+  ----------------------------------------------------------------------*/
