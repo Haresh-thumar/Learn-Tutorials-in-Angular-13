@@ -1,3 +1,4 @@
+// import { Department } from './../life-cycle-hook-component.component';
 import { from, Observable } from 'rxjs';
 import { Component, Input, OnChanges, Output, SimpleChanges, EventEmitter } from '@angular/core';
 
@@ -95,52 +96,93 @@ export class NgOnChangeComponentComponent implements OnChanges {
   /*----------------------------------------------------------------------
         ngOnChanges Life Cycle Hook with Setter & Getter (Part-1)
   ----------------------------------------------------------------------*/
-  private _name!: string;
-  private _dob!: string;
+  // private _name!: string;
+  // private _dob!: string;
 
-  /*------- name -------*/
-  @Input()
-  get name(): string {
-    return this._name;
-  };
-  set name(val: string) {
-    this._name = val;
-    if (val) {
-      this.uname = val.charAt(0) + val.substring(1);
-    }
-  };
-  uname!: string;
+  /*---------- name ----------*/
+  // @Input()
+  // get name(): string {
+  //   return this._name;
+  // };
+  // set name(val: string) {
+  //   this._name = val;
+  //   if (val) {
+  //     this.uname = val.charAt(0) + val.substring(1);
+  //   }
+  // };
+  // uname!: string;
 
-  /*------- dob -------*/
-  @Input()
-  get dob(): string {
-    return this._dob;
-  }
+  /*---------- dob ----------*/
+  // @Input()
+  // get dob(): string {
+  //   return this._dob;
+  // }
 
-  set dob(date: string) {
-    this._dob = date;
-    this.age = this.getAge(date);
+  // set dob(date: string) {
+  //   this._dob = date;
+  //   this.age = this.getAge(date);
 
-    if (this.age >= 10 && this.age < 13) {
-      this.message = "you are kids";
-    } else if (this.age >= 13 && this.age < 18) {
-      this.message = "you are teen";
-    } else {
-      this.message = "you are mature";
-    }
-  }
-  age!: number;
-  message!: string;
+  //   if (this.age >= 10 && this.age < 13) {
+  //     this.message = "you are kids";
+  //   } else if (this.age >= 13 && this.age < 18) {
+  //     this.message = "you are teen";
+  //   } else {
+  //     this.message = "you are mature";
+  //   }
+  // }
+  // age!: number;
+  // message!: string;
 
-  private getAge(dateOfBirth: string) {
-    const dob = new Date(dateOfBirth).getTime();
-    const currentDate = new Date().getTime();
-    return Math.floor((currentDate - dob) / (1000 * 60 * 60 * 24 * 365));
-  }
+  // private getAge(dateOfBirth: string) {
+  //   const dob = new Date(dateOfBirth).getTime();
+  //   const currentDate = new Date().getTime();
+  //   return Math.floor((currentDate - dob) / (1000 * 60 * 60 * 24 * 365));
+  // }
+
+
+
+
+  /*----------------------------------------------------------------------
+         ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
+   ----------------------------------------------------------------------*/
+  // private _department: Department;
+
+  // @Input()
+  // get department() {
+  //   return this._department;
+  // };
+
+  // set department(department: Department) {
+  //   this._department = department;
+
+  //   if (!this._department) {
+  //     return;
+  //   }
+  //   const depIndex = this.records.findIndex((dep) => dep.depId === this.department.depId);
+  //   if (depIndex < 0) {
+  //     this.department.teachers = [];
+  //     this.records.push(this.department);
+  //     this.teacher = "";
+  //   }
+  // };
+
+
+  // private _teacher: string;
+
+  // @Input()
+  // get teacher(): string {
+  //   return this._teacher;
+  // }
+
+  // set teacher(val: string) {
+
+  //   this._teacher = val;
+
+  //   if (val && val.trim().length) {
+  //     this.department?.teachers?.push(val);
+  //   }
+  // }
+
+  // records: Department[] = [];
+
 }
-
-
-
- /*----------------------------------------------------------------------
-        ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
-  ----------------------------------------------------------------------*/

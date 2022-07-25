@@ -56,13 +56,29 @@ export class LifeCycleHookComponentComponent implements OnInit {
 
 
 
-    /*----------------------------------------------------------------------
-        ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
+  /*----------------------------------------------------------------------
+      ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
   ----------------------------------------------------------------------*/
+  //   public departments = [
+  //     { name: "CSE", depId: 23 },
+  //     { name: "EEE", depId: 24 },
+  //     { name: "IT", depId: 25 },
+  //     { name: "ME", depId: 26 },
+  //   ];
 
+  //   public selectedDep!: Department;
 
+  //   onDepartmentChange(depIndex: string) {
+  //     this.selectedDep = this.departments[+depIndex];
+  //   }
+  // }
+
+  // export class Department {
+  //   name: string;
+  //   depId: number;
+  //   teachers?: string[];
+  // }
 
 
 
 }
-

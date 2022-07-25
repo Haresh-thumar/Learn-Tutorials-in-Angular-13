@@ -39,5 +39,24 @@ DOB: <input type="date" (keyup.enter)="0" #dob>
 <!--=============================================================================================
                     ngOnChanges Life Cycle Hook with Setter & Getter (Part-2)
 ==============================================================================================-->
+<!-- <section>
+  <select (change)="onDepartmentChange(dep.value)" #dep>
+    <option selected disabled value="-1">Choose DepartmentB</option>
+    <option [value]="i" *ngFor="let dep of departments; index as i;">
+      {{dep.name}}
+    </option>
+  </select>
 
- 
+  <div>
+    <label>Teacher:</label>
+    <input (keyup.enter)="0;" #teacher>
+  </div>
+
+  <app-ng-on-change-component [department]="selectedDep" [teacher]="teacher.value"></app-ng-on-change-component>
+</section> -->
+
+
+
+<!--=============================================================================================
+        Custom Decorator & ngOnChanges Object Accessors in ngOnChanges Life Cycle Hook
+==============================================================================================-->
