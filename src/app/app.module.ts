@@ -20,6 +20,7 @@ import { ContentModule } from './content-projection/content.module';
 import { GithubTypeExampleComponent } from './github-type-example/github-type-example.component';
 import { GithubModule } from './github-type-example/github.module';
 import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
+import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
     NgTemplateOutletComponent,
     ChildComponent,
     GithubTypeExampleComponent,
+    CustomPipePipe,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
     GithubModule,
     LifeCycleModule
   ],
+  exports:[CustomPipePipe],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
