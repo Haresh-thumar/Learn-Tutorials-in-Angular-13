@@ -21,7 +21,7 @@ import { GithubTypeExampleComponent } from './github-type-example/github-type-ex
 import { GithubModule } from './github-type-example/github.module';
 import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
-import { CustomRoutingComponent } from './custom-routing/custom-routing.component';
+import { CustomRouteModule } from './custom-routing/custom-route.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { CustomRoutingComponent } from './custom-routing/custom-routing.componen
     ChildComponent,
     GithubTypeExampleComponent,
     CustomPipePipe,
-    CustomRoutingComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,8 @@ import { CustomRoutingComponent } from './custom-routing/custom-routing.componen
     ParentChildInputOutputModule,
     ContentModule,
     GithubModule,
-    LifeCycleModule
+    LifeCycleModule,
+    CustomRouteModule
   ],
   exports: [CustomPipePipe],
   providers: [],

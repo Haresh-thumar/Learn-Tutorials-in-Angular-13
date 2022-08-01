@@ -1,3 +1,4 @@
+import { CustomRoutingComponent } from './custom-routing.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentFileComponent } from './student-file/student-file.component';
@@ -7,11 +8,11 @@ import { RoutingCompoRoutingModule } from './routing-compo.module';
 
 
 @NgModule({
-  declarations: [StudentFileComponent, StudentDetailComponent],
+  declarations: [CustomRoutingComponent, StudentFileComponent, StudentDetailComponent],
   imports: [
     CommonModule,
-    RoutingCompoRoutingModule
+    RoutingCompoRoutingModule,
   ],
-  exports: [StudentFileComponent, StudentDetailComponent]
+  exports: [CustomRoutingComponent, StudentFileComponent, StudentDetailComponent]
 })
 export class CustomRouteModule { }
