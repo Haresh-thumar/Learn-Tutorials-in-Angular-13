@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './custom-routing.component.html',
   styleUrls: ['./custom-routing.component.scss']
 })
-export class CustomRoutingComponent{
+export class CustomRoutingComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  ngOnInit(): void {
+  }
   /*===================================================================================
                                     Server-side Routing
   ===================================================================================*/
@@ -20,5 +22,7 @@ export class CustomRoutingComponent{
   studentDetail() {
     this.router.navigate(['/student-detail']);
   }
+
+
 
 }

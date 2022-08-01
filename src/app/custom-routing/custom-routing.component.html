@@ -1,9 +1,10 @@
 <!--=====================================================================================================
                                           Client-side Routing
 ======================================================================================================-->
-<a [routerLink]="['./student-file']" routerLinkActive="active">Student-file</a><br>
-<a [routerLink]="['./student-detail']" routerLinkActive="active">Student-detail</a>
-<br><br><hr>
+<a [routerLink]="['/student-file']" routerLinkActive="active">Student-file</a><br>
+<a [routerLink]="['/student-detail']" routerLinkActive="active">Student-detail</a>
+<br><br>
+<hr>
 
 
 <!--=====================================================================================================
@@ -11,6 +12,5 @@
 ======================================================================================================-->
 <button (click)="studentFile()"> show student </button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button (click)="studentDetail()"> show student </button>
-
 
 <router-outlet></router-outlet>

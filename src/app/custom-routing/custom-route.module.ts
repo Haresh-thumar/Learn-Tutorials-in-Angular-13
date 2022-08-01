@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentFileComponent } from './student-file/student-file.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
-import { CustomRoutingModule } from './custom-routing.module';
+import { RoutingCompoRoutingModule } from './routing-compo.module';
 
 
 
@@ -10,7 +10,7 @@ import { CustomRoutingModule } from './custom-routing.module';
   declarations: [StudentFileComponent, StudentDetailComponent],
   imports: [
     CommonModule,
-    CustomRoutingModule
+    RoutingCompoRoutingModule
   ],
   exports: [StudentFileComponent, StudentDetailComponent]
 })
