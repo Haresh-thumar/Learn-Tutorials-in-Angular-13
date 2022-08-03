@@ -22,6 +22,7 @@ import { GithubModule } from './github-type-example/github.module';
 import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { CustomRouteModule } from './custom-routing/custom-route.module';
+import { CustomFormModule } from './forms/custom-form.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CustomRouteModule } from './custom-routing/custom-route.module';
     ContentModule,
     GithubModule,
     LifeCycleModule,
-    CustomRouteModule
+    CustomRouteModule,
+    CustomFormModule
   ],
   exports: [CustomPipePipe],
   providers: [],
