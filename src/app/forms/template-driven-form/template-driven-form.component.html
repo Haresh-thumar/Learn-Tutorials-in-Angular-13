@@ -1,1 +1,17 @@
-<p>template-driven-form works!</p>
+<section class="container">
+  <form class="form-group" #regForm="ngForm" (ngSubmit)="register(regForm)">
+    <h2 class="text-center">Registration Form</h2><br>
+    <div>
+      <input type="text" class="form-control" placeholder="First Name" name="fName" ngModel>
+    </div><br>
+    <div>
+      <input type="text" class="form-control" placeholder="Last Name" name="lName" ngModel>
+    </div><br>
+    <div>
+      <input type="email" class="form-control" placeholder="Email ID" name="email" ngModel>
+    </div><br>
+    <div class="text-center">
+      <button class="btn btn-success" type="submit" id="Register">Register</button>
+    </div>
+  </form>
+</section>
