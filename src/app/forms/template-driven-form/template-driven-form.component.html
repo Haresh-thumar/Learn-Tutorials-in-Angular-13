@@ -1,17 +1,76 @@
-<section class="container">
+<!-- <section class="container">
   <form class="form-group" #regForm="ngForm" (ngSubmit)="register(regForm)">
     <h2 class="text-center">Registration Form</h2><br>
     <div>
-      <input type="text" class="form-control" placeholder="First Name" name="fName" ngModel>
+      <label for="fName">First Name</label>
+      <input type="text" class="form-control" placeholder="First Name" fName name="fName" ngModel required
+        #fName="ngModel">
+      <span class="text-danger" *ngIf="fName.touched && !fName.valid">Please enter firstname value.</span>
     </div><br>
     <div>
-      <input type="text" class="form-control" placeholder="Last Name" name="lName" ngModel>
+      <label for="lName">Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name" lName name="lName" ngModel required
+        #lName="ngModel">
+      <span class="text-danger" *ngIf="lName.touched && !lName.valid">Please enter lastname value.</span>
     </div><br>
     <div>
-      <input type="email" class="form-control" placeholder="Email ID" name="email" ngModel>
+      <label for="email">email </label>
+      <input type="email" class="form-control" placeholder="Email ID" name="email" email ngModel required
+        #email="ngModel">
+      <span class="text-danger" *ngIf="email.touched && !email.valid">Please enter email value.</span>
     </div><br>
     <div class="text-center">
-      <button class="btn btn-success" type="submit" id="Register">Register</button>
+      <button class="btn btn-success" type="submit" id="Register" [disabled]="!regForm.valid">Register</button>
     </div>
   </form>
-</section>
+</section> -->
+
+
+
+
+<!--==========================  =======================-->
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+ 
+  <p>
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" ngModel>
+  </p>
+ 
+  <p>
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" ngModel>
+  </p>
+ 
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" ngModel>
+  </p>
+ 
+  <p>
+    <label for="gender">Gender</label>
+    <input type="radio" value="male" name="gender" ngModel> Male
+    <input type="radio" value="female" name="gender" ngModel> Female
+  </p>
+ 
+  <p>
+    <label for="isMarried">Married</label>
+    <input type="checkbox" name="isMarried" ngModel>
+  </p>
+ 
+  <select name="country" ngModel>
+    <option [ngValue]="c.id" *ngFor="let c of countryList">
+      {{c.name}}
+    </option>
+  </select>
+ 
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+  
+</form>
+
+
+<pre>Value : {{contactForm.value | json }} </pre>
+<pre>Valid : {{contactForm.valid}} </pre>
+<pre>Touched : {{contactForm.touched  }} </pre>
+<pre>Submitted : {{contactForm.submitted  }} </pre>
