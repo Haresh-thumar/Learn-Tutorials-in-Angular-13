@@ -28,49 +28,61 @@
 
 
 
-<!--==========================  =======================-->
-<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
- 
-  <p>
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" ngModel>
-  </p>
- 
-  <p>
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" ngModel>
-  </p>
- 
-  <p>
-    <label for="email">Email </label>
-    <input type="text" id="email" name="email" ngModel>
-  </p>
- 
-  <p>
-    <label for="gender">Gender</label>
-    <input type="radio" value="male" name="gender" ngModel> Male
-    <input type="radio" value="female" name="gender" ngModel> Female
-  </p>
- 
-  <p>
-    <label for="isMarried">Married</label>
-    <input type="checkbox" name="isMarried" ngModel>
-  </p>
- 
-  <select name="country" ngModel>
-    <option [ngValue]="c.id" *ngFor="let c of countryList">
-      {{c.name}}
-    </option>
-  </select>
- 
-  <p>
-    <button type="submit">Submit</button>
-  </p>
-  
-</form>
+<!--========================== Example-2 =======================-->
+<section class="container">
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div class="input-div">
+      <label for="firstname">First Name :</label>
+      <input type="text" name="firstname" ngModel class="mx-3">
+    </div>
+
+    <div class="input-div">
+      <label for="lastname">Last Name :</label>
+      <input type="text" name="lastname" ngModel class="mx-3">
+    </div>
+
+    <div class="input-div">
+      <label for="email">Email :</label>
+      <input type="text" id="email" name="email" ngModel class="mx-3">
+    </div>
+
+    <div class="input-div">
+      <p>Gender : </p>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="inlineRadio1">Male : </label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="male" ngModel selected>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="inlineRadio1">Female : </label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="female" ngModel>
+      </div>
+    </div>
+
+    <p>Merried Status :</p>
+    <div class="input-div form-check form-switch">
+      <label for="isMarried">Married</label>
+      <input type="checkbox" class="form-check-input" role="switch" name="isMarried" ngModel
+        style="margin-right: 10px;">
+    </div>
+
+    <div class="input-div">
+      <select name="country" ngModel>
+        <option selected disabled>select country</option>
+        <option [ngValue]="c.id" *ngFor="let c of countryList">
+          {{c.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-div">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
 
 
-<pre>Value : {{contactForm.value | json }} </pre>
-<pre>Valid : {{contactForm.valid}} </pre>
-<pre>Touched : {{contactForm.touched  }} </pre>
-<pre>Submitted : {{contactForm.submitted  }} </pre>
+  <pre>Value : {{contactForm.value | json }} </pre>
+  <pre>Valid : {{contactForm.valid}} </pre>
+  <pre>Touched : {{contactForm.touched  }} </pre>
+  <pre>Submitted : {{contactForm.submitted  }} </pre>
+
+</section>
