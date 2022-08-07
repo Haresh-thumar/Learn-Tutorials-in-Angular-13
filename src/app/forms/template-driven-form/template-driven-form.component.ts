@@ -8,10 +8,10 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class TemplateDrivenFormComponent implements OnInit {
 
-  // constructor() { }
+  constructor() { }
 
-  // ngOnInit(): void {
-  // }
+  ngOnInit(): void {
+  }
 
   // register(regForm: any) {
   //   const fName = regForm.controls.fName.value;
@@ -24,56 +24,29 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   /*========================= Example-2 =======================*/
 
-//   countryList: country[] = [
-//     new country("1", "India"),
-//     new country('2', 'USA'),
-//     new country('3', 'England')
-//   ];
+  //   countryList: country[] = [
+  //     new country("1", "India"),
+  //     new country('2', 'USA'),
+  //     new country('3', 'England')
+  //   ];
 
-//   onSubmit(contactForm) {
-//     console.log(contactForm.value);
-//   }
+  //   onSubmit(contactForm) {
+  //     console.log(contactForm.value);
+  //   }
 
-// export class country {
-//   id: string;
-//   name: string;
+  // export class country {
+  //   id: string;
+  //   name: string;
 
-//   constructor(id: string, name: string) {
-//     this.id = id;
-//     this.name = name;
-//   }
-// }
-
-
-
-  /*========================= Example-3 =======================*/
-  registerForm!: FormGroup;
-  submitted = false;
-
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    });
-  }
- 
-  onSubmit() {
-    this.submitted = true;
- 
-    // stop the process here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
- 
-    alert('SUCCESS!!');
-  }
+  //   constructor(id: string, name: string) {
+  //     this.id = id;
+  //     this.name = name;
+  //   }
+  // }
 
 
 }
+
 
 
 

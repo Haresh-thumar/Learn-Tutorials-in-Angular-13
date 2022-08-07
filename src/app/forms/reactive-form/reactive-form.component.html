@@ -1,1 +1,203 @@
-<p>reactive-form works!</p>
+<!--=========================================================================================================
+                                      simple form with normal validation
+==========================================================================================================-->
+<!-- <section class="container mt-5">
+  <form [formGroup]="signupForm" (ngSubmit)="postData(signupForm)">
+    <div class="form-group">
+      <input type="text" class="form-control w-50" formControlName="fname" placeholder="your first name">
+      <br><br>
+      <input type="text" class="form-control w-50" formControlName="lname" placeholder="your last name">
+      <br><br>
+      <input type="email" class="form-control w-50" formControlName="emailid" placeholder="your email id">
+      <br><br>
+      <input type="password" class="form-control w-50" formControlName="userpassword" placeholder="your password">
+    </div>
+    <br>
+    <input type="submit" value="post data" [disabled]='!signupForm.valid'>
+  </form>
+</section> -->
+
+
+
+<!--=========================================================================================================
+                                    Reactive form with built-in validation
+==========================================================================================================-->
+<section class="container mt-5">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row">
+      <!--==================== first Name ====================-->
+      <div class="col-md-6">
+        <div>
+          <label for="firstname">First Name : </label><br>
+          <input type="text" class="form-control" id="firstname" name="firstname" formControlName="firstname">
+        </div>
+        <br>
+        <!--------- field error --------->
+        <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
+          <div [hidden]="['!firstname.errors.required']">
+            First Name is required
+          </div>
+          <div [hidden]="['!firstname.errors.minlength']">
+            Min Length is 10
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== last Name ====================-->
+      <div class="col-md-6">
+        <div>
+          <label for="lastname">Last Name : </label>
+          <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname">
+        </div>
+        <!--------- field error --------->
+        <div *ngIf="!lastname.valid && (lastname.dirty || lastname.touched)">
+          <div [hidden]="['!lastname.errors.pattern']">
+            Only characters are allowed
+          </div>
+          <div [hidden]="['!lastname.errors.maxLength']">
+            Max length allowed is {{['lastname.errors.maxlength?.requiredLength']}}
+          </div>
+          <div [hidden]="['!lastname.errors.required']">
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== email id ====================-->
+      <div class="col-md-12">
+        <div>
+          <label for="email">Email : </label>
+          <input type="text" class="form-control" id="email" name="email" formControlName="email">
+        </div>
+        <!--------- field error --------->
+        <div *ngIf="!email.valid && (email.dirty || email.touched)">
+          <div [hidden]="['!email.errors.required']">
+            email is required
+          </div>
+          <div [hidden]="['!email.errors.email']">
+            invalid email id
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== gender ====================-->
+      <div class="col-md-4 mt-4">
+        <p>Gender :</p>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" value="male" id="male" name="gender" formControlName="gender">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" value="female" id="female" name="gender"
+            formControlName="gender">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <!--------- field error --------->
+        <div *ngIf="!gender.valid && (gender.dirty || gender.touched)">
+          <div [hidden]="['!gender.errors.required']">
+            gender is required
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== merried status ====================-->
+      <div class="col-md-4 mt-4">
+        <p>merried status :</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="isMarried" name="isMarried" formControlName="isMarried">
+          <label class="form-check-label" for="isMarried">Married</label>
+        </div>
+        <!--------- field error --------->
+        <div *ngIf="!isMarried.valid && (isMarried.dirty || isMarried.touched)">
+          <div [hidden]="['!isMarried.errors.required']">
+            isMarried is required
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== country Name ====================-->
+      <div class="col-md-4 mt-4">
+        <div>
+          <label for="country">select country :</label>
+          <select class="form-select form-select-sm" id="country" name="country" formControlName="country"
+            value="select country">
+            <option [ngValue]="c.id" *ngFor="let c of countryList">
+              {{c.name}}
+            </option>
+          </select>
+        </div>
+        <!--------- field error --------->
+        <div *ngIf="!country.valid && (country.dirty || country.touched)">
+          <div [hidden]="['!country.errors.required']">
+            country is required
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row mt-4" formGroupName="address">
+        <!--==================== City ====================-->
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="city">City :</label>
+            <input type="text" class="form-control" name="city" formControlName="city">
+          </div>
+          <!--------- field error --------->
+          <div *ngIf="!city.valid && (city.dirty || city.touched)">
+            <div [hidden]="['!city.errors.required']">
+              city is required
+            </div>
+          </div>
+        </div>
+
+        <!--==================== street ====================-->
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="street">Street :</label>
+            <input type="text" class="form-control" name="street" formControlName="street">
+          </div>
+          <!--------- field error --------->
+          <div *ngIf="!street.valid && (street.dirty || street.touched)">
+            <div [hidden]="['!street.errors.required']">
+              street is required
+            </div>
+          </div>
+        </div>
+
+        <!--==================== street ====================-->
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="pincode">Pin Code :</label>
+            <input type="text" class="form-control" name="pincode" formControlName="pincode">
+          </div>
+          <!--------- field error --------->
+          <div *ngIf="!pincode.valid && (pincode.dirty || pincode.touched)">
+            <div [hidden]="['!pincode.errors.required']">
+              pincode is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--==================== submit button ====================-->
+      <div class="col-md-12 text-center mt-5">
+        <button class="btn btn-primary px-5" type="submit" [disabled]="!contactForm.valid">Submit</button>
+      </div>
+
+      <!--==================== Form valid message ====================-->
+      <div class="mt-4 text-center fw-bold" [class]="!contactForm.valid? 'red' : 'green'">
+        <p *ngIf="contactForm.valid">Form is Valid</p>
+        <p *ngIf="!contactForm.valid && contactForm.dirty && contactForm.touched">
+          Form is inValid please fill the all detail
+        </p>
+      </div>
+
+    </div>
+  </form>
+</section>
