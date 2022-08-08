@@ -48,7 +48,7 @@ export class ReactiveFormComponent implements OnInit {
     isMarried: new FormControl('', [Validators.required]),
     country: new FormControl('', [Validators.required]),
     address: new FormGroup({
-      city: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z]+$")]),
       street: new FormControl('', [Validators.required]),
       pincode: new FormControl('', [Validators.required])
     })
@@ -107,6 +107,10 @@ export class ReactiveFormComponent implements OnInit {
     console.log(this.contactForm.value);
   }
 
+  resetForm() {
+    this.contactForm.reset();
+  }
+
 }
 
 export class contact {
@@ -121,7 +125,6 @@ export class contact {
     pincode: string;
   }
 }
-
 
 export class country {
   id: string;

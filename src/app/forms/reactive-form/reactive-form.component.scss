@@ -1,11 +1,30 @@
 input.ng-invalid.ng-touched {
   border-color: tomato;
+  box-shadow: none;
 }
 
-.red {
+input:focus {
+  box-shadow: none;
+}
+
+.error-msg {
+  font-size: 13px;
+  font-weight: 600;
+  margin: -15px 0 15px 0;
+  padding: 2px 0 4px 5px;
+  border-radius: 3px;
   color: tomato;
+  background-color: rgb(255, 208, 200);
 }
 
-.green {
-  color: rgb(3, 200, 3);
+.valid-msg {
+  font-size: 16px;
+  width: 450px;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px 0 15px 0;
+  padding: 10px 0 0px 5px;
+  border-radius: 3px;
+  color: rgb(0, 171, 63);
+  background-color: rgb(160, 255, 195);
 }
