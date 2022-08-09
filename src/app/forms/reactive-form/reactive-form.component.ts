@@ -10,8 +10,8 @@ export class ReactiveFormComponent implements OnInit {
 
   // constructor(){}
 
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  // }
 
   /*=====================================================================================
                             simple form with normal validation
@@ -162,6 +162,19 @@ export class ReactiveFormComponent implements OnInit {
       age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]],
 
     })
+  }
+
+  ngOnInit() {
+    // this.signupForm.get('fname').valueChanges.subscribe(
+    //   uname => {
+    //     console.log('fname changed : ', uname);
+    //   }
+    // ) 
+    this.signupForm.get('fname').statusChanges.subscribe(
+      uname => {
+        console.log("status changed : ", uname);
+      }
+    )
   }
 
   /*------------ for data store ------------*/
