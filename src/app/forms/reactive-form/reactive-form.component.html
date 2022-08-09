@@ -22,37 +22,37 @@
 <!--=========================================================================================================
                                     Reactive form with built-in validation
 ==========================================================================================================-->
-<section class="container mt-5">
+<!-- <section class="container mt-5">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-    <div class="row">
-      <!--==================== first Name ====================-->
-      <div class="col-md-6">
+    <div class="row"> -->
+<!--==================== first Name ====================-->
+<!-- <div class="col-md-6">
         <div>
           <label for="firstname">First Name : </label><br>
           <input type="text" class="form-control" id="firstname" name="firstname" formControlName="firstname">
         </div>
-        <br>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
+        <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
           <small *ngIf="['!firstname.errors.required']">
             First Name is required... &
           </small>
           <small *ngIf="['!firstname.errors.minlength']">
-            Min Length is 10...
+            Min Length is 3 character...
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== last Name ====================-->
-      <div class="col-md-6">
+<!--==================== last Name ====================-->
+<!-- <div class="col-md-6">
         <div>
           <label for="lastname">Last Name : </label>
           <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname">
         </div>
-        <br>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)">
+        <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)">
           <small *ngIf="['!lastname.errors.pattern']">
             Only characters are allowed... &
           </small>
@@ -63,18 +63,18 @@
             Last Name is required...
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== email id ====================-->
-      <div class="col-md-12">
+<!--==================== email id ====================-->
+<!-- <div class="col-md-12">
         <div>
           <label for="email">Email : </label>
           <input type="text" class="form-control" id="email" name="email" formControlName="email">
         </div>
-        <br>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!email.valid && (email.dirty || email.touched)">
+        <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!email.valid && (email.dirty || email.touched)">
           <small *ngIf="['!email.errors.required']">
             email is required... &
           </small>
@@ -82,11 +82,11 @@
             invalid email id
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== gender ====================-->
-      <div class="col-md-4 mt-4">
+<!--==================== gender ====================-->
+<!-- <div class="col-md-4 mt-4">
         <p>Gender :</p>
         <div class="form-check form-check-inline">
           <input type="radio" class="form-check-input" value="male" id="male" name="gender" formControlName="gender">
@@ -97,117 +97,160 @@
             formControlName="gender">
           <label class="form-check-label" for="female">Female</label>
         </div>
-        <br>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!gender.valid && (gender.dirty || gender.touched)">
+        <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!gender.valid && (gender.dirty || gender.touched)">
           <small *ngIf="['!gender.errors.required']">
             select gender
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== merried status ====================-->
-      <div class="col-md-4 mt-4">
+<!--==================== merried status ====================-->
+<!-- <div class="col-md-4 mt-4">
         <p>merried status :</p>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="isMarried" name="isMarried" formControlName="isMarried">
           <label class="form-check-label" for="isMarried">Married</label>
-        </div>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!isMarried.valid && (isMarried.dirty || isMarried.touched)">
+        </div> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!isMarried.valid && (isMarried.dirty || isMarried.touched)">
           <small *ngIf="['!isMarried.errors.required']">
             isMarried is required
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== country Name ====================-->
-      <div class="col-md-4 mt-4">
+<!--==================== country Name ====================-->
+<!-- <div class="col-md-4 mt-4">
         <div>
           <label for="country">select country :</label>
           <select class="form-select form-select-sm" id="country" name="country" formControlName="country"
             value="select country">
+            <option selected value="select country">--- select country ---</option>
             <option [ngValue]="c.id" *ngFor="let c of countryList">
               {{c.name}}
             </option>
           </select>
         </div>
-        <br>
-        <!--------- field error --------->
-        <div class="error-msg" *ngIf="!country.valid && (country.dirty || country.touched)">
+        <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!country.valid && (country.dirty || country.touched)">
           <small *ngIf="['!country.errors.required']">
             country is required
           </small>
         </div>
-      </div>
+      </div> -->
 
 
-      <div class="row mt-4" formGroupName="address">
-        <!--==================== City ====================-->
-        <div class="col-md-4">
+<!-- <div class="row mt-4" formGroupName="address"> -->
+<!--==================== City ====================-->
+<!-- <div class="col-md-4">
           <div class="form-group">
             <label for="city">City :</label>
             <input type="text" class="form-control" name="city" formControlName="city">
           </div>
-          <br>
-          <!--------- field error --------->
-          <div class="error-msg" *ngIf="!city.valid && (city.dirty || city.touched)">
+          <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!city.valid && (city.dirty || city.touched)">
             <small *ngIf="['!city.errors.required']">
               city is required
             </small>
           </div>
-        </div>
+        </div> -->
 
-        <!--==================== street ====================-->
-        <div class="col-md-4">
+<!--==================== street ====================-->
+<!-- <div class="col-md-4">
           <div class="form-group">
             <label for="street">Street :</label>
             <input type="text" class="form-control" name="street" formControlName="street">
           </div>
-          <br>
-          <!--------- field error --------->
-          <div class="error-msg" *ngIf="!street.valid && (street.dirty || street.touched)">
+          <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!street.valid && (street.dirty || street.touched)">
             <small *ngIf="['!street.errors.required']">
               street is required
             </small>
           </div>
-        </div>
+        </div> -->
 
-        <!--==================== street ====================-->
-        <div class="col-md-4">
+<!--==================== street ====================-->
+<!-- <div class="col-md-4">
           <div class="form-group">
             <label for="pincode">Pin Code :</label>
             <input type="text" class="form-control" name="pincode" formControlName="pincode">
           </div>
-          <br>
-          <!--------- field error --------->
-          <div class="error-msg" *ngIf="!pincode.valid && (pincode.dirty || pincode.touched)">
+          <br> -->
+<!--------- field error --------->
+<!-- <div class="error-msg" *ngIf="!pincode.valid && (pincode.dirty || pincode.touched)">
             <small *ngIf="['!pincode.errors.required']">
               pincode is required
             </small>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
-      <!--==================== submit button ====================-->
-      <div class="col-md-12 text-center mt-5">
+<!--==================== submit button ====================-->
+<!-- <div class="col-md-12 text-center mt-5">
         <button class="btn btn-primary px-5" type="submit" [disabled]="!contactForm.valid">Submit</button>
         <button class="btn btn-danger px-5 mx-4" (click)="resetForm()" type="submit"
           [disabled]="!contactForm.valid">Reset</button>
-      </div>
+      </div> -->
 
-      <!--==================== Form valid message ====================-->
-      <div class="mt-4" [class]="!contactForm.valid ? '' :'valid-msg'">
+<!--==================== Form valid message ====================-->
+<!-- <div class="mt-4" [class]="!contactForm.valid ? '' :'valid-msg'">
         <p *ngIf="contactForm.valid">Form is Valid</p>
-        <!-- <p *ngIf="!contactForm.valid">
-          Form is inValid please fill the all detail
-        </p> -->
       </div>
 
 
+    </div>
+  </form>
+</section> -->
+
+
+
+
+<!--=========================================================================================================
+                                  Reactive form with postData() & reserData()
+==========================================================================================================-->
+<section class="container mt-5">
+  <h2>Reactive Forms</h2>
+  <form [formGroup]="signupForm">
+
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="fname" placeholder="your first name">
+      <small class="text-danger" *ngIf="signupForm.controls['fname'].hasError('required')">
+        first name is required
+      </small>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="lname" placeholder="your last name">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <input class="form-control" type="email" formControlName="emailid" placeholder="your email id">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <input class="form-control" type="password" formControlName="pass" placeholder="your password">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="age" placeholder="your age">
+    </div>
+    <br>
+
+    <div class="text-center">
+      <button class="btn btn-success px-4" type="submit" (click)="postData()" [disabled]="!signupForm.valid">Submit</button>
+      <button class="btn btn-danger px-4 mx-4" type="reset" (click)="resetForm()" [disabled]="!signupForm.valid">Reset</button>
     </div>
   </form>
 </section>
