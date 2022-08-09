@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, NgForm, Validators } from '@angular/forms'
+import { Formsignup } from './formsignup';
+
 
 @Component({
   selector: 'app-reactive-form',
@@ -139,8 +141,6 @@ export class ReactiveFormComponent implements OnInit {
   // }
 
 
-
-
   /*=====================================================================================
                          Reactive form with postData() & reserData()
    =====================================================================================*/
@@ -160,21 +160,33 @@ export class ReactiveFormComponent implements OnInit {
       emailid: ['', [Validators.email, Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       pass: ['', Validators.required],
       age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]],
-
-    })
+    });
   }
 
   ngOnInit() {
-    // this.signupForm.get('fname').valueChanges.subscribe(
-    //   uname => {
+    /*==================== check value single form-control ====================*/
+    // this.signupForm.get('fname').valueChanges.subscribe(uname => {
     //     console.log('fname changed : ', uname);
-    //   }
-    // ) 
-    this.signupForm.get('fname').statusChanges.subscribe(
-      uname => {
-        console.log("status changed : ", uname);
-      }
-    )
+    // });
+
+    /*==================== check value all form-control ====================*/
+    // this.signupForm.valueChanges.subscribe((x: Formsignup) => {
+    //   console.log("fname changed", x.fname);
+    //   console.log("lname changed", x.lname);
+    //   console.log("emailid changed", x.emailid);
+    //   console.log("pass changed", x.pass);
+    //   console.log("age changed", x.age);
+    // });
+
+    /*==================== check status single form-control ====================*/
+    // this.signupForm.get('fname').statusChanges.subscribe(uname => {
+    //   console.log("status changed : ", uname);
+    // });
+
+    /*==================== check status all form-control ====================*/
+    this.signupForm.statusChanges.subscribe(uname => {
+      console.log("status changed : ", uname);
+    });
   }
 
   /*------------ for data store ------------*/
