@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, NgForm, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl, NgForm, Validators, FormArray } from '@angular/forms'
 import { Formsignup } from './formsignup';
 
 
@@ -184,9 +184,19 @@ export class ReactiveFormComponent implements OnInit {
     // });
 
     /*==================== check status all form-control ====================*/
-    this.signupForm.statusChanges.subscribe(uname => {
-      console.log("status changed : ", uname);
-    });
+    // this.signupForm.statusChanges.subscribe(uname => {
+    //   console.log("status changed : ", uname);
+    // });
+
+    /*==================== FormArray ==================*/
+    const arr = new FormArray([
+      new FormControl(),
+      new FormControl(),
+    ]);
+    arr.patchValue(['haresh']);
+    console.log(arr.value);
+    console.log(arr.status);
+
   }
 
   /*------------ for data store ------------*/
