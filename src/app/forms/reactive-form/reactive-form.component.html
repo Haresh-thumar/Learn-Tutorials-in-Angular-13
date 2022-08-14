@@ -216,7 +216,7 @@
 <!--=========================================================================================================
                                   Reactive form with postData() & reserData()
 ==========================================================================================================-->
-<section class="container mt-5">
+<!-- <section class="container mt-5">
   <h2>Reactive Forms</h2>
   <form [formGroup]="signupForm">
 
@@ -254,4 +254,31 @@
       <button class="btn btn-primary px-4" (click)="fillData()">Fill Data</button>
     </div>
   </form>
+</section> -->
+
+
+
+
+
+<!--=========================================================================================================
+                                  Reactive form Add Dynamic New FormControl
+==========================================================================================================-->
+<section class="container mt-5">
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" class="form-group">
+    <div formArrayName="contactNo">
+      <div *ngFor="let contact of dynamicForm.controls.contactNo.controls; index as i">
+        <input [formControlName]="i" placeholder="contact no." class="form-control w-75  d-inline-block">
+        <button class="btn btn-danger rounded-circle ms-3" (click)="removeContact(i)" [disabled]="!dynamicForm.valid">
+          <i class="fa fa-trash"></i>
+        </button><br>
+        <br>
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!dynamicForm.valid">Sunbmit</button>
+  </form>
+
+  <br><br>
+
+  <button class="btn btn-success" (click)="addContactNo()" [disabled]="!dynamicForm.valid">Add New Contact No</button>
+  <button class="btn btn-danger mx-3" (click)="setPreset()">Set Preset</button>
 </section>

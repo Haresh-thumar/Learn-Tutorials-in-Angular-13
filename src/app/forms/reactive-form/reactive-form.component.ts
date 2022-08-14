@@ -10,7 +10,7 @@ import { Formsignup } from './formsignup';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  // constructor(){}
+  // constructor() { }
 
   // ngOnInit() {
   // }
@@ -145,75 +145,75 @@ export class ReactiveFormComponent implements OnInit {
                          Reactive form with postData() & reserData()
    =====================================================================================*/
 
-  signupForm: FormGroup;
-  FirstName: string = '';
-  LastName: string = '';
-  Email: string = '';
-  Password: string = '';
-  Age: number;
+  // signupForm: FormGroup;
+  // FirstName: string = '';
+  // LastName: string = '';
+  // Email: string = '';
+  // Password: string = '';
+  // Age: number;
 
-  constructor(private frmbuilder: FormBuilder) {
-    /*------------ add form validation ------------*/
-    this.signupForm = frmbuilder.group({
-      fname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
-      lname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
-      emailid: ['', [Validators.email, Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-      pass: ['', Validators.required],
-      age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]],
-    });
-  }
+  // constructor(private frmbuilder: FormBuilder) {
+  /*------------ add form validation ------------*/
+  //   this.signupForm = frmbuilder.group({
+  //     fname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
+  //     lname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
+  //     emailid: ['', [Validators.email, Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+  //     pass: ['', Validators.required],
+  //     age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]],
+  //   });
+  // }
 
-  ngOnInit() {
-    /*==================== check value single form-control ====================*/
-    // this.signupForm.get('fname').valueChanges.subscribe(uname => {
-    //     console.log('fname changed : ', uname);
-    // });
+  // ngOnInit() {
+  /*==================== check value single form-control ===================*/
+  // this.signupForm.get('fname').valueChanges.subscribe(uname => {
+  //     console.log('fname changed : ', uname);
+  // });
 
-    /*==================== check value all form-control ====================*/
-    // this.signupForm.valueChanges.subscribe((x: Formsignup) => {
-    //   console.log("fname changed", x.fname);
-    //   console.log("lname changed", x.lname);
-    //   console.log("emailid changed", x.emailid);
-    //   console.log("pass changed", x.pass);
-    //   console.log("age changed", x.age);
-    // });
+  /*==================== check value all form-control ======================*/
+  // this.signupForm.valueChanges.subscribe((x: Formsignup) => {
+  //   console.log("fname changed", x.fname);
+  //   console.log("lname changed", x.lname);
+  //   console.log("emailid changed", x.emailid);
+  //   console.log("pass changed", x.pass);
+  //   console.log("age changed", x.age);
+  // });
 
-    /*==================== check status single form-control ====================*/
-    // this.signupForm.get('fname').statusChanges.subscribe(uname => {
-    //   console.log("status changed : ", uname);
-    // });
+  /*==================== check status single form-control ==================*/
+  // this.signupForm.get('fname').statusChanges.subscribe(uname => {
+  //   console.log("status changed : ", uname);
+  // });
 
-    /*==================== check status all form-control ====================*/
-    // this.signupForm.statusChanges.subscribe(uname => {
-    //   console.log("status changed : ", uname);
-    // });
+  /*==================== check status all form-control =====================*/
+  // this.signupForm.statusChanges.subscribe(uname => {
+  //   console.log("status changed : ", uname);
+  // });
 
-    /*==================== FormArray ==================*/
-    const arr = new FormArray([
-      new FormControl(),
-      new FormControl(),
-    ]);
-    arr.patchValue(['haresh']);
-    console.log(arr.value);
-    console.log(arr.status);
+  /*============================== FormArray ===============================*/
+  //   const arr = new FormArray([
+  //     new FormControl(),
+  //     new FormControl(),
+  //   ]);
+  //   arr.patchValue(['haresh']);
+  //   console.log(arr.value);
+  //   console.log(arr.status);
 
-  }
+  // }
 
   /*------------ for data store ------------*/
-  postData() {
-    this.FirstName = this.signupForm.get('fname').value;
-    this.LastName = this.signupForm.get('lname').value;
-    this.Email = this.signupForm.get('emailid').value;
-    this.Password = this.signupForm.get('pass').value;
-    this.Age = this.signupForm.get('age').value;
-    console.log([this.FirstName, this.LastName, this.Email, this.Password, this.Age]);
-    console.log(this.signupForm.value);
-  }
+  // postData() {
+  //   this.FirstName = this.signupForm.get('fname').value;
+  //   this.LastName = this.signupForm.get('lname').value;
+  //   this.Email = this.signupForm.get('emailid').value;
+  //   this.Password = this.signupForm.get('pass').value;
+  //   this.Age = this.signupForm.get('age').value;
+  //   console.log([this.FirstName, this.LastName, this.Email, this.Password, this.Age]);
+  //   console.log(this.signupForm.value);
+  // }
 
   /*------------ form reset ------------*/
-  resetForm() {
-    this.signupForm.reset();
-  }
+  // resetForm() {
+  //   this.signupForm.reset();
+  // }
 
   /*------------ Set Value in form ------------*/
   // fillData(){
@@ -227,14 +227,51 @@ export class ReactiveFormComponent implements OnInit {
   // }
 
   /*------------ patch Value in form ------------*/
-  fillData() {
-    this.signupForm.patchValue({
-      fname: "Rutvik",
-      lname: 'dhaduk',
-      pass: 'rutvik@123',
-      age: 22
-    })
+  // fillData() {
+  //   this.signupForm.patchValue({
+  //     fname: "Rutvik",
+  //     lname: 'dhaduk',
+  //     pass: 'rutvik@123',
+  //     age: 22
+  //   })
+  // }
+
+
+
+  /*=====================================================================================
+                        Reactive form Add Dynamic New FormControl
+  =====================================================================================*/
+  FormGroup: FormGroup;
+  dynamicForm: any;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.dynamicForm = new FormGroup({
+      contactNo: new FormArray([
+        new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern("^[0-9]*$")]),
+      ]),
+    });
   }
 
+  onSubmit() {
+    console.log(this.dynamicForm.get('contactNo').value);
+    console.log(this.dynamicForm.value);
+  }
+
+  addContactNo() {
+    this.dynamicForm.get('contactNo').push(new FormControl());
+  }
+
+  setPreset() {
+    this.dynamicForm.get('contactNo').patchValue(['1234567890', '0987654321']);
+  }
+
+  removeContact(i) {
+    console.log("index", i)
+    // this.dynamicForm.controls.contactNo.controls.splice(i, 1);   // for remove only value input inputbox
+    // this.dynamicForm.controls.contactNo.value.splice(i, 1);   // for remove input control
+    this.dynamicForm.controls.contactNo.removeAt(i, 1);   // for remove input control & value both
+  }
 
 }
