@@ -261,9 +261,9 @@
 
 
 <!--=========================================================================================================
-                                  Reactive form Add Dynamic New FormControl
+                                Reactive form Add Dynamic single new FormControl
 ==========================================================================================================-->
-<section class="container mt-5">
+<!-- <section class="container mt-5">
   <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" class="form-group">
     <div formArrayName="contactNo">
       <div *ngFor="let contact of dynamicForm.controls.contactNo.controls; index as i">
@@ -281,4 +281,60 @@
 
   <button class="btn btn-success" (click)="addContactNo()" [disabled]="!dynamicForm.valid">Add New Contact No</button>
   <button class="btn btn-danger mx-3" (click)="setPreset()">Set Preset</button>
+</section> -->
+
+
+
+
+
+<!--=========================================================================================================
+                            Reactive form Add new Dynamic Multiple row FormControl
+==========================================================================================================-->
+<section class="container mt-5">
+  <form novalidate [formGroup]="HareshFormGroup">
+    <div class="row">
+      <div class="col-lg-12 form-group">
+        <div formGroupName="itemRows">
+          <h3 class="form-title">Form Detail</h3><br>
+
+          <ng-container *ngIf="getControls() != null">
+            <div *ngFor="let itemrow of getControls(); let i = index;" [formGroupName]="i">
+              <div class="row">
+                <!-------- Name -------->
+                <div class="col">
+                  <input placeholder="Name" formControlName="Name" class="form-control">
+                </div>
+                <!-------- RollNo -------->
+                <div class="col">
+                  <input placeholder="RollNo" formControlName="RollNo" class="form-control" required>
+                </div>
+                <!-------- Class -------->
+                <div class="col">
+                  <input placeholder="Class" formControlName="Class" class="form-control" required>
+                </div>
+                <!-------- MobileNo -------->
+                <div class="col">
+                  <input placeholder="MobileNo" formControlName="MobileNo" class="form-control" required>
+                </div>
+                <!-------- deleteRow Button -------->
+                <div class="col form-group text-center bg-light">
+                  <button class="btn btn-danger rounded-circle" (click)="deleteRow(i)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div><br>
+            </div>
+          </ng-container>
+
+          <!-------- addNewRow Button -------->
+          <div class="form-group text-right">
+            <button type="button" class="btn btn-primary" (click)="addNewRow()" [disabled]="HareshFormGroup.invalid">
+              Add More
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
 </section>

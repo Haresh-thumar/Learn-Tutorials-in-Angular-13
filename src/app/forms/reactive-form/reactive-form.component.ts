@@ -241,37 +241,88 @@ export class ReactiveFormComponent implements OnInit {
   /*=====================================================================================
                         Reactive form Add Dynamic New FormControl
   =====================================================================================*/
-  FormGroup: FormGroup;
-  dynamicForm: any;
+  // FormGroup: FormGroup;
+  // dynamicForm: any;
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-    this.dynamicForm = new FormGroup({
-      contactNo: new FormArray([
-        new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern("^[0-9]*$")]),
-      ]),
+  // ngOnInit(): void {
+  //   this.dynamicForm = new FormGroup({
+  //     contactNo: new FormArray([
+  //       new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern("^[0-9]*$")]),
+  //     ]),
+  //   });
+  // }
+
+  // onSubmit() {
+  //   console.log(this.dynamicForm.get('contactNo').value);
+  //   console.log(this.dynamicForm.value);
+  // }
+
+  // addContactNo() {
+  //   this.dynamicForm.get('contactNo').push(new FormControl());
+  // }
+
+  // setPreset() {
+  //   this.dynamicForm.get('contactNo').patchValue(['1234567890', '0987654321']);
+  // }
+
+  // removeContact(i) {
+  //   console.log("index", i)
+  //   // this.dynamicForm.controls.contactNo.controls.splice(i, 1);   // for remove only value input inputbox
+  //   // this.dynamicForm.controls.contactNo.value.splice(i, 1);   // for remove input control
+  //   this.dynamicForm.controls.contactNo.removeAt(i, 1);   // for remove input control & value both
+  // }
+
+
+
+
+  /*=====================================================================================
+                  Reactive form Add new Dynamic Multiple row FormControl
+  =====================================================================================*/
+  HareshFormGroup: FormGroup;
+  TotalRow: number;
+
+  constructor(private _fb: FormBuilder) { }
+
+  ngOnInit() {
+    this.HareshFormGroup = this._fb.group({
+      itemRows: this._fb.array([this.initItemRow()]),
     });
   }
 
-  onSubmit() {
-    console.log(this.dynamicForm.get('contactNo').value);
-    console.log(this.dynamicForm.value);
+  initItemRow() {
+    return this._fb.group({
+      Name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern("^[a-z0-9_-]{8,15}$")]],
+      RollNo: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern("^((\\+91-?)|0)?[0-9]{5}$")]],
+      Class: ['', [Validators.required, Validators.pattern("^[a-z0-9_-]{8,15}$")]],
+      MobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+    })
   }
 
-  addContactNo() {
-    this.dynamicForm.get('contactNo').push(new FormControl());
+  getControls() {
+    return (this.HareshFormGroup.get('itemRows') as FormArray).controls;
   }
 
-  setPreset() {
-    this.dynamicForm.get('contactNo').patchValue(['1234567890', '0987654321']);
+  addNewRow() {
+    const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
+    control.push(this.initItemRow());
   }
 
-  removeContact(i) {
-    console.log("index", i)
-    // this.dynamicForm.controls.contactNo.controls.splice(i, 1);   // for remove only value input inputbox
-    // this.dynamicForm.controls.contactNo.value.splice(i, 1);   // for remove input control
-    this.dynamicForm.controls.contactNo.removeAt(i, 1);   // for remove input control & value both
+  deleteRow(index: number) {
+    const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
+    this.TotalRow = control.value.length;
+    if (control != null) {
+      this.TotalRow = control.value.length;
+    }
+    if (this.TotalRow > 1) {
+      control.removeAt(index);
+    }
+    else {
+      alert('one record is mendedary...');
+    }
   }
+
+
 
 }
