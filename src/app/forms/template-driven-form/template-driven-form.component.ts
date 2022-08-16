@@ -12,6 +12,7 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /*========================= Example-1 =======================*/
 
   // register(regForm: any) {
   //   const fName = regForm.controls.fName.value;
@@ -45,11 +46,39 @@ export class TemplateDrivenFormComponent implements OnInit {
   // }
 
 
+  /*-------------- mobile no. & email vallidation -----------------*/
+  // secondaryPhone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
+  // primaryEmail: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
+
+
+
+
+  /*========================= Example-3 =======================*/
+  user = new user();
+
+  onFormSubmit(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    console.log("user Form :", form.controls['uname'].value);
+    console.log("Gender :", form.controls['gender'].value);
+    console.log("Married ?:", form.controls['married'].value);
+    console.log("Accapted T & C :", form.controls['tc'].value);
+  }
+
+  setDefaultValue() { }
+  resetForm(userForm) { }
+
+
+
+
 }
 
 
 
-
-/*-------------- mobile no. & email vallidation -----------------*/
-  // secondaryPhone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
-  // primaryEmail: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
+export class user {
+  username: string;
+  gender: boolean;
+  isMarried: boolean;
+  isTCAccepted: boolean;
+}
