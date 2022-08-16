@@ -54,7 +54,7 @@ export class TemplateDrivenFormComponent implements OnInit {
 
 
   /*========================= Example-3 =======================*/
-  user = new user();
+  user = new User();
 
   onFormSubmit(form: NgForm) {
     if (form.invalid) {
@@ -62,21 +62,28 @@ export class TemplateDrivenFormComponent implements OnInit {
     }
     console.log("user Form :", form.controls['uname'].value);
     console.log("Gender :", form.controls['gender'].value);
-    console.log("Married ?:", form.controls['married'].value);
+    console.log("Married :", form.controls['married'].value);
     console.log("Accapted T & C :", form.controls['tc'].value);
   }
 
-  setDefaultValue() { }
-  resetForm(userForm) { }
+  setDefaultValue() {
+    this.user.username = "Haresh";
+    this.user.isMarried = false;
+    this.user.isTCAccepted = true;
+  }
 
-
-
+  resetForm(form: NgForm) {
+    this.user = new User();
+    form.resetForm({
+      married: false
+    });
+  }
 
 }
 
 
 
-export class user {
+export class User {
   username: string;
   gender: boolean;
   isMarried: boolean;

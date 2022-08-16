@@ -99,51 +99,52 @@
 ===============================================================================================-->
 <section class="container mt-5">
   <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
-    <table>
+    <table class="form-group w-50 form-table">
       <!-------- name -------->
-      <tr>
+      <tr class="border-bottom">
         <td>Name :</td>
         <td>
-          <input type="text" name="uname" [ngModel]="user.username" required #uname="ngModel">
-          <div *ngIf="uname.invalid">
-            name is required
-          </div>
+          <input type="text" name="uname" [ngModel]="user.username" required #uname="ngModel" class="form-control">
+          <small class="text-danger" *ngIf="uname.invalid">name is required</small>
         </td>
       </tr>
       <!-------- gender -------->
-      <tr>
+      <tr class="border-bottom">
         <td>Gender :</td>
-        <td>
-          <input type="radio" value="male" name="gender" [ngModel]="user.gender" required #gender="ngModel"> Male
-          <input type="radio" value="Female" name="gender" [ngModel]="user.gender" required #gender="ngModel"> Female
-          <div *ngIf="gender.invalid">
-            gender is required
+        <td class="form-check">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" value="male" [ngModel]="user.gender" required
+              #gender="ngModel">Male
           </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" value="Female" [ngModel]="user.gender" required
+              #gender="ngModel">Female
+          </div><br>
+          <small class="text-danger" *ngIf="gender.invalid">gender is required</small>
         </td>
       </tr>
       <!-------- married -------->
-      <tr>
-        <td>Are you merried :</td>
-        <td>
-          <input type="checkbox" name="married" [ngModel]="user.isMarried">
+      <tr class="border-bottom">
+        <td>Are you merried : </td>
+        <td class="form-check">
+          <input type="checkbox" name="married" [ngModel]="user.isMarried" class="form-check-input">
         </td>
       </tr>
       <!-------- T & C -------->
-      <tr>
-        <td>Accept T & C</td>
-        <td>
-          <input type="checkbox" name="tc" [ngModel]="user.isTCAccepted" readonly #tc="ngModel">
-          <div *ngIf="tc.invalid">
-            Accept T & C
-          </div>
+      <tr class="border-bottom">
+        <td>Accept T & C : </td>
+        <td class="form-check">
+          <input type="checkbox" name="tc" [ngModel]="user.isTCAccepted" readonly #tc="ngModel"
+            class="form-check-input">
+          <small class="text-danger" *ngIf="tc.invalid">Accept T & C</small>
         </td>
       </tr>
       <!-------- T & C -------->
-      <tr>
+      <tr class="border-bottom text-center">
         <td colspan="2">
-          <button>Submit</button>
-          <button type="button" (click)="setDefaultValue()">set Default</button>
-          <button type="button" (click)="resetForm(userForm)">reset</button>
+          <button class="btn btn-success">Submit</button>
+          <button class="btn btn-primary mx-3" type="button" (click)="setDefaultValue()">set Default</button>
+          <button class="btn btn-danger" type="button" (click)="resetForm(userForm)">reset</button>
         </td>
       </tr>
     </table>
