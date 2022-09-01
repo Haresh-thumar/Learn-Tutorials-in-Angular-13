@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, NgForm, Validators, FormArray } from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl, NgForm, Validators, FormArray, FormGroupDirective } from '@angular/forms'
 import { Formsignup } from './formsignup';
+
 
 
 @Component({
@@ -280,59 +281,108 @@ export class ReactiveFormComponent implements OnInit {
   /*=====================================================================================
                   Reactive form Add new Dynamic Multiple row FormControl
   =====================================================================================*/
-  HareshFormGroup: FormGroup;
-  TotalRow: number;
+  // HareshFormGroup: FormGroup;
+  // TotalRow: number;
 
-  constructor(private _fb: FormBuilder) { }
+  // constructor(private _fb: FormBuilder) { }
+
+  // ngOnInit() {
+  //   this.HareshFormGroup = this._fb.group({
+  //     itemRows: this._fb.array([this.initItemRow()]),
+  //   });
+  // }
+
+  // initItemRow() {
+  //   return this._fb.group({
+  //     Name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern("^[a-z0-9_-]{8,15}$")]],
+  //     RollNo: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern("^((\\+91-?)|0)?[0-9]{5}$")]],
+  //     Class: ['', [Validators.required, Validators.pattern("^[a-z0-9_-]{8,15}$")]],
+  //     MobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+  //   })
+  // }
+
+  // getControls() {
+  //   return (this.HareshFormGroup.get('itemRows') as FormArray).controls;
+  // }
+
+  // addNewRow() {
+  //   const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
+  //   control.push(this.initItemRow());
+  // }
+
+  // deleteRow(index: number) {
+  //   const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
+  //   this.TotalRow = control.value.length;
+  //   if (control != null) {
+  //     this.TotalRow = control.value.length;
+  //   }
+  //   if (this.TotalRow > 1) {
+  //     control.removeAt(index);
+  //   }
+  //   else {
+  //     alert('one record is mendedary...');
+  //   }
+  // }
+
+
+
+
+  /*=====================================================================================
+                   Reactive form Add new Dynamic Multiple row FormControl
+  =====================================================================================*/
+  regiForm: FormGroup;
+  FirstName: string = '';
+  LastName: string = '';
+  Address: string = '';
+  DOB: Date = null;
+  Gender: string = '';
+  Blog: string = '';
+  Email: string = '';
+  IsAccepted: number = 0;
+
+  constructor(private fb:FormBuilder) {
+    this.regiForm = fb.group({
+      'FirstName' : [null, Validators.required],
+      'LastName' : [null, Validators.required],
+      'Address' : [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(200)])],
+      'DOB' : [null, Validators.required],
+      'Gender' : [null, Validators.required],
+      'Playlist' : [null, Validators.required],
+      'Email' : [null, Validators.compose([Validators.required, Validators.email])],
+      'IsAccepted' : [null,Validators.required],
+    })
+   }
+   
+   onChanage(event: any){
+    if(event.checked == true){
+      this.IsAccepted = 1;
+    }else {
+      this.IsAccepted = 0;
+    }
+   }
+
+   onFormSubmit(form:any){
+    console.log(form);
+  }
+
+  foods: Food[] = [
+    {value: 'Angular2', viewValue: 'Angular 2'},
+    {value: 'Angular3', viewValue: 'Angular 3'},
+    {value: 'Angular4', viewValue: 'Angular 4'},
+    {value: 'Angular5', viewValue: 'Angular 5'},
+    {value: 'Angular6', viewValue: 'Angular 6'},
+    {value: 'Angular7', viewValue: 'Angular 7'},
+    {value: 'Angular8', viewValue: 'Angular 8'},
+    {value: 'Angular9', viewValue: 'Angular 9'},
+  ];
 
   ngOnInit() {
-    this.HareshFormGroup = this._fb.group({
-      itemRows: this._fb.array([this.initItemRow()]),
-    });
-  }
-
-  initItemRow() {
-    return this._fb.group({
-      Name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern("^[a-z0-9_-]{8,15}$")]],
-      RollNo: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern("^((\\+91-?)|0)?[0-9]{5}$")]],
-      Class: ['', [Validators.required, Validators.pattern("^[a-z0-9_-]{8,15}$")]],
-      MobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-    })
-  }
-
-  getControls() {
-    return (this.HareshFormGroup.get('itemRows') as FormArray).controls;
-  }
-
-  addNewRow() {
-    const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
-    control.push(this.initItemRow());
-  }
-
-  deleteRow(index: number) {
-    const control = <FormArray>this.HareshFormGroup.controls['itemRows'] as FormArray;
-    this.TotalRow = control.value.length;
-    if (control != null) {
-      this.TotalRow = control.value.length;
-    }
-    if (this.TotalRow > 1) {
-      control.removeAt(index);
-    }
-    else {
-      alert('one record is mendedary...');
-    }
   }
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
+interface Food {
+  value: string;
+  viewValue: string;
 }

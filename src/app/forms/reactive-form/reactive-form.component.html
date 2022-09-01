@@ -290,7 +290,7 @@
 <!--=========================================================================================================
                             Reactive form Add new Dynamic Multiple row FormControl
 ==========================================================================================================-->
-<section class="container mt-5">
+<!-- <section class="container mt-5">
   <form novalidate [formGroup]="HareshFormGroup">
     <div class="row">
       <div class="col-lg-12 form-group">
@@ -299,35 +299,35 @@
 
           <ng-container *ngIf="getControls() != null">
             <div *ngFor="let itemrow of getControls(); let i = index;" [formGroupName]="i">
-              <div class="row">
-                <!-------- Name -------->
-                <div class="col">
+              <div class="row"> -->
+<!-------- Name -------->
+<!-- <div class="col">
                   <input placeholder="Name" formControlName="Name" class="form-control">
-                </div>
-                <!-------- RollNo -------->
-                <div class="col">
+                </div> -->
+<!-------- RollNo -------->
+<!-- <div class="col">
                   <input placeholder="RollNo" formControlName="RollNo" class="form-control" required>
-                </div>
-                <!-------- Class -------->
-                <div class="col">
+                </div> -->
+<!-------- Class -------->
+<!-- <div class="col">
                   <input placeholder="Class" formControlName="Class" class="form-control" required>
-                </div>
-                <!-------- MobileNo -------->
-                <div class="col">
+                </div> -->
+<!-------- MobileNo -------->
+<!-- <div class="col">
                   <input placeholder="MobileNo" formControlName="MobileNo" class="form-control" required>
-                </div>
-                <!-------- deleteRow Button -------->
-                <div class="col form-group text-center bg-light">
+                </div> -->
+<!-------- deleteRow Button -------->
+<!-- <div class="col form-group text-center bg-light">
                   <button class="btn btn-danger rounded-circle" (click)="deleteRow(i)">
                     <i class="fa fa-trash"></i>
                   </button>
                 </div>
               </div><br>
             </div>
-          </ng-container>
+          </ng-container> -->
 
-          <!-------- addNewRow Button -------->
-          <div class="form-group text-right">
+<!-------- addNewRow Button -------->
+<!-- <div class="form-group text-right">
             <button type="button" class="btn btn-primary" (click)="addNewRow()" [disabled]="HareshFormGroup.invalid">
               Add More
             </button>
@@ -337,4 +337,109 @@
       </div>
     </div>
   </form>
+</section> -->
+
+
+
+
+
+<!--=========================================================================================================
+                                    Reactive form with reactive form
+==========================================================================================================-->
+<section class="container-fluid">
+  <mat-card class="example-card">
+    <mat-card-title>Angular Material Component With Angular 13</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)">
+        <div class="row align-items-center">
+          <!------- FirstName ------->
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput #FirstName formControlName="FirstName">
+              <mat-hint align="end">{{FirstName.value.length}} / 15</mat-hint>
+              <mat-error *ngIf="!regiForm.get('FirstName').valid && regiForm.get('FirstName').touched">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!------- LastName ------->
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>LastName</mat-label>
+              <input matInput formControlName="LastName">
+              <mat-error *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!------- Address ------->
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Leave a comment</mat-label>
+              <textarea matInput formControlName="Address" placeholder="enter address"></textarea>
+              <mat-error *ngIf="!regiForm.get('Address').valid && regiForm.get('Address').touched">
+                Please select Address
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!------- DOB ------->
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Choose a date</mat-label>
+              <input formControlName="DOB" matInput [matDatepicker]="picker" placeholder="select a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi="true" #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-error *ngIf="!regiForm.get('DOB').valid && regiForm.get('DOB').touched">
+              Please select a Date
+            </mat-error>
+          </div>
+          <!------- Gender ------->
+          <div class="col-md-6">
+            <mat-label class="fw-bold">Gender :</mat-label>&nbsp;&nbsp;&nbsp;
+            <mat-radio-group formControlName="Gender" class="example-full-width">
+              <mat-radio-button value="Male">Male</mat-radio-button>&nbsp;&nbsp;
+              <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <!------- Select Dropdown ------->
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Choose one</mat-label>
+              <mat-select formControlName="Playlist">
+                <mat-option>-- Select --</mat-option>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="!regiForm.get('Playlist').valid && regiForm.get('Playlist').touched">
+                Please select option
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!------- Email ------->
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input formControlName="Email" matInput placeholder="Enter Email">
+              <mat-hint>use like: demo@demo.com</mat-hint>
+              <mat-error *ngIf="!regiForm.get('Email').valid && regiForm.get('Email').touched">
+                Enter Proper Email !!!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!------- Accept Term & Condition ------->
+          <div class="col-md-6">
+            <mat-slide-toggle formControlName="IsAccepted" (change)="onChanage($event)">
+              Accept Term & Condition
+            </mat-slide-toggle>
+          </div>
+          <!------- Submit ------->
+          <div class="col-md-6" class="conent-center">
+            <button mat-raised-button color="accent" [disabled]="!regiForm.valid || IsAccepted == 0">Submit</button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </section>

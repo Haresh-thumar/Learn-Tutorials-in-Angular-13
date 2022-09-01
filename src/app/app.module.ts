@@ -23,6 +23,7 @@ import { LifeCycleModule } from './life-cycle-hook-component/life-cycle.module';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { CustomRouteModule } from './custom-routing/custom-route.module';
 import { CustomFormModule } from './forms/custom-form.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CustomFormModule } from './forms/custom-form.module';
     GithubModule,
     LifeCycleModule,
     CustomRouteModule,
-    CustomFormModule
+    CustomFormModule,
+    BrowserAnimationsModule
   ],
   exports: [CustomPipePipe],
   providers: [],
