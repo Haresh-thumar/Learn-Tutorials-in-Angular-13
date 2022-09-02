@@ -378,9 +378,9 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
 }
+
+  
 
 interface Food {
   value: string;

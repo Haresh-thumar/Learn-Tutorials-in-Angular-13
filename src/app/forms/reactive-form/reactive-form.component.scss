@@ -3,6 +3,11 @@ input.ng-invalid.ng-touched {
   box-shadow: none;
 }
 
+input:hover{
+  box-shadow: none;
+  border: none;
+}
+
 input:focus {
   box-shadow: none;
 }
@@ -40,6 +45,10 @@ input:focus {
 .example-card{
   width: 75%;
   margin: 0 auto;
+  border: 1px dashed #3f51b5;
+  box-shadow: 0 0 10px silver;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px!important;
 }
 
 .example-form {
@@ -48,4 +57,23 @@ input:focus {
 
 .example-full-width {
   width: 100%!important;
+}
+
+.primary-color {
+  margin: 20px 0 20px 0;
+  color: #3f51b5!important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.primary-color sup {
+  color: #f44336!important;
+}
+
+.conent-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.conent-center button {
+  margin: 0 10px 0 10px;
 }

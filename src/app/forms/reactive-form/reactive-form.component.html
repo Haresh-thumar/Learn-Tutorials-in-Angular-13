@@ -346,9 +346,9 @@
 <!--=========================================================================================================
                                     Reactive form with reactive form
 ==========================================================================================================-->
-<section class="container-fluid">
+<section class="container-fluid mt-5">
   <mat-card class="example-card">
-    <mat-card-title>Angular Material Component With Angular 13</mat-card-title>
+    <mat-card-title class="primary-color">Reactive Form With Angular Material <sup>*</sup></mat-card-title>
     <mat-card-content>
       <form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)">
         <div class="row align-items-center">
@@ -367,7 +367,8 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>LastName</mat-label>
-              <input matInput formControlName="LastName">
+              <input matInput formControlName="LastName" #LastName>
+              <mat-hint align="end">{{LastName.value.length}} / 15</mat-hint>
               <mat-error *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">
                 Please enter a valid email address
               </mat-error>
@@ -377,7 +378,8 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Leave a comment</mat-label>
-              <textarea matInput formControlName="Address" placeholder="enter address"></textarea>
+              <textarea matInput formControlName="Address" placeholder="enter address" #Address></textarea>
+              <mat-hint align="end">{{Address.value.length}} / 150</mat-hint>
               <mat-error *ngIf="!regiForm.get('Address').valid && regiForm.get('Address').touched">
                 Please select Address
               </mat-error>
@@ -436,7 +438,8 @@
           </div>
           <!------- Submit ------->
           <div class="col-md-6" class="conent-center">
-            <button mat-raised-button color="accent" [disabled]="!regiForm.valid || IsAccepted == 0">Submit</button>
+            <button mat-raised-button color="primary" [disabled]="!regiForm.valid || IsAccepted == 0">Submit</button>
+            <button mat-raised-button color="accent" [disabled]="regiForm.valid">Reset</button>
           </div>
         </div>
       </form>
