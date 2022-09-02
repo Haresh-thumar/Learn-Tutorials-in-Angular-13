@@ -54,7 +54,7 @@ import { ModuleComponent } from './module/module.component';
     LifeCycleModule,
     CustomRouteModule,
     CustomFormModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports: [CustomPipePipe],
   providers: [],
