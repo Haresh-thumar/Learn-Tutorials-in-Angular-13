@@ -24,6 +24,7 @@ import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { CustomRouteModule } from './custom-routing/custom-route.module';
 import { CustomFormModule } from './forms/custom-form.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModuleComponent } from './module/module.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ChildComponent,
     GithubTypeExampleComponent,
     CustomPipePipe,
+    ModuleComponent,
   ],
   imports: [
     BrowserModule,
