@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-
+  companys: any;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.companys = [
+      {
+        "code": "001",
+        "Name": "HCL"
+      },
+      {
+        "code": "002",
+        "Name": "TCS"
+      },
+      {
+        "code": "003",
+        "Name": "Nokia"
+      },
+    ];
   }
 
 }
