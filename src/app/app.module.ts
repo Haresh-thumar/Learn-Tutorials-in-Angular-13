@@ -28,6 +28,7 @@ import { ModuleComponent } from './module/module.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ServicesComponent } from './services/services.component';
 import { FooterComponent } from './services/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FooterComponent } from './services/footer/footer.component';
     CustomRouteModule,
     CustomFormModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   exports: [CustomPipePipe],
   providers: [],

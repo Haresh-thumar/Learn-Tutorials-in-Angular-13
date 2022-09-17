@@ -6,14 +6,36 @@
       "author": "typicode"
     }
   ],
-  "comments": [
+  "users": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "anil@gmail.com",
+      "name": "Anil Sidhu",
+      "password": "anil@123"
+    },
+    {
+      "id": 2,
+      "email": "tony@gmail.com",
+      "name": "tony",
+      "password": "tony@123"
+    },
+    {
+      "id": 3,
+      "email": "bruce@gmail.com",
+      "name": "bruce",
+      "password": "bruce@123"
+    },
+    {
+      "id": 4,
+      "email": "peter@gmail.com",
+      "name": "peter",
+      "password": "peter@123"
+    },
+    {
+      "id": 5,
+      "email": "rehana@gmail.com",
+      "name": "rehana",
+      "password": "rehana@123"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
