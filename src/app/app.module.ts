@@ -25,6 +25,7 @@ import { CustomRouteModule } from './custom-routing/custom-route.module';
 import { CustomFormModule } from './forms/custom-form.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModuleComponent } from './module/module.component';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ModuleComponent } from './module/module.component';
     GithubTypeExampleComponent,
     CustomPipePipe,
     ModuleComponent,
+    ToDoListComponent,
   ],
   imports: [
     BrowserModule,

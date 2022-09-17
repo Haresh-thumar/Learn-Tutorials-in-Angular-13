@@ -1,0 +1,15 @@
+<div class="container mt-3">
+    <h1 class="text-center">ToDo List</h1>
+    <hr>
+    <input type="text" placeholder="Enter New Task" #task>
+    <br><br>
+    <button (click)="addTask(task.value)">Add Task</button>
+
+<br><br><br><br><hr>
+    <h2>List Display</h2>
+    <ul>
+        <li *ngFor="let i of todolist">
+            {{i.id}} - {{i.name}} <button (click)="removeTask(i.id)">remove</button>
+        </li>
+    </ul>
+</div>
