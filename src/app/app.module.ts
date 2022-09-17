@@ -26,6 +26,8 @@ import { CustomFormModule } from './forms/custom-form.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModuleComponent } from './module/module.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { ServicesComponent } from './services/services.component';
+import { FooterComponent } from './services/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     CustomPipePipe,
     ModuleComponent,
     ToDoListComponent,
+    ServicesComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
