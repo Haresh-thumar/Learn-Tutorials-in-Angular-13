@@ -11,8 +11,8 @@ export class FooterComponent implements OnInit {
   user: any[] = [];
 
   constructor(private userData: UserDataService) {
-    console.log(".................", userData.users());
-    this.user = this.userData.users();
+    // console.log(".................", userData.users());
+    // this.user = this.userData.users();
   }
 
   ngOnInit(): void {

@@ -8,11 +8,21 @@ import { UserDataService } from './service/user-data.service';
 })
 export class ServicesComponent implements OnInit {
 
-  // user: any[] = [];
+  users: any;
 
   constructor(private userData: UserDataService) {
-    // console.log(".................", userData.users());
-    // this.user = this.userData.users();
+
+    this.userData.users().subscribe({
+      next: (data: any) => {
+        console.warn("data is", data);
+        this.users = data;
+      },
+      error: err => {
+        console.log("something went wrong", err);
+      }
+    }
+    )
+
   }
 
   ngOnInit(): void {
