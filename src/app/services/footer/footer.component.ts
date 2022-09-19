@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   users: any;
 
   constructor(private userData: UserDataService) {
-    this.userData.users().subscribe({
+    this.userData.getUsers().subscribe({
       next: (data: any) => {
         console.warn("data is", data);
         this.users = data;

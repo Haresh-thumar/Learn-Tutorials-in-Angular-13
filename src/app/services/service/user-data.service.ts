@@ -10,7 +10,7 @@ export class UserDataService {
 
   constructor(private api:HttpClient) { }
 
-  users(){
+  getUsers(){
     return this.api.get(this.url);
   }
 

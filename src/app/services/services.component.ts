@@ -11,9 +11,15 @@ export class ServicesComponent implements OnInit {
 
   users: any;
 
-  constructor(private userData: UserDataService) {
+  ngOnInit(): void {
+    this.fetchUser();
+  }
 
-    this.userData.users().subscribe({
+  constructor(private userData: UserDataService) {
+  }
+
+  fetchUser() {
+    this.userData.getUsers().subscribe({
       next: (data: any) => {
         console.warn("data is", data);
         this.users = data;
@@ -24,15 +30,15 @@ export class ServicesComponent implements OnInit {
     });
   }
 
+
   getUserFormData(data: any) {
-    console.warn(data);
-    this.userData.saveUsers(data).subscribe((result)=>{
+    this.userData.saveUsers(data).subscribe((result) => {
       this.users = result;
       console.log("save data", result);
+      this.fetchUser();
     })
   }
 
-  ngOnInit(): void {
-  }
+ 
 
 }
