@@ -4,5 +4,29 @@
     <li *ngFor="let item of user">{{item.name}} - {{item.age}} - {{item.email}}</li>
 </ul> -->
 
+<ul>
+    <li *ngFor="let item of users">{{item.id}} - {{item.name}} - {{item.email}}</li>
+</ul>
+
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of users">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
 
 <!-- <app-footer></app-footer> -->
