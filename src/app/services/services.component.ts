@@ -21,9 +21,15 @@ export class ServicesComponent implements OnInit {
       error: err => {
         console.log("something went wrong", err);
       }
-    }
-    )
+    });
+  }
 
+  getUserFormData(data: any) {
+    console.warn(data);
+    this.userData.saveUsers(data).subscribe((result)=>{
+      this.users = result;
+      console.log("save data", result);
+    })
   }
 
   ngOnInit(): void {

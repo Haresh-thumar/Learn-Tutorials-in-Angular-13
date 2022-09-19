@@ -28,7 +28,8 @@ import { ModuleComponent } from './module/module.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ServicesComponent } from './services/services.component';
 import { FooterComponent } from './services/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http'
     CustomFormModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule
   ],
   exports: [CustomPipePipe],
   providers: [],

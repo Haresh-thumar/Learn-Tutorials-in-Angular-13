@@ -14,6 +14,10 @@ export class UserDataService {
     return this.api.get(this.url);
   }
 
+  saveUsers(data:any){
+    return this.api.post(this.url, data);
+  }
+
   // users(){
   //   return  [
   //     {name: 'anil', age: 28, email: 'anil@test.com'},
