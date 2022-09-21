@@ -4,9 +4,9 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { StudentFileComponent } from './student-file/student-file.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'student-file', pathMatch: 'full' },
-  // { path: 'student-file', component: StudentFileComponent },
-  // { path: 'student-detail', component: StudentDetailComponent },
+  { path: '', redirectTo: 'student-file', pathMatch: 'full' },
+  { path: 'student-file', component: StudentFileComponent },
+  { path: 'student-detail', component: StudentDetailComponent },
 ];
 
 @NgModule({

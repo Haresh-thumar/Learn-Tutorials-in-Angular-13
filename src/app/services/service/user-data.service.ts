@@ -1,5 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+
+
+interface dataType {
+  name: string;
+  id: number;
+  indian: boolean;
+  address: any;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +36,16 @@ export class UserDataService {
   //     {name: 'peter', age: 25, email: 'peter@test.com'},
   //   ]
   // }
+
+  getData(){
+    const data:dataType = {
+      name: "haresh thumar",
+      id: 100,
+      indian: true,
+      address: "43, noida, up"
+    }
+
+    return data;
+  }
+
 }
