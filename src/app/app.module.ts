@@ -31,6 +31,7 @@ import { FooterComponent } from './services/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { GroupRoutingModule } from './group-routing/group-routing.module';
+import { GroupRoutingComponent } from './group-routing/group-routing.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { GroupRoutingModule } from './group-routing/group-routing.module';
     ToDoListComponent,
     ServicesComponent,
     FooterComponent,
+    GroupRoutingComponent
   ],
   imports: [
     BrowserModule,

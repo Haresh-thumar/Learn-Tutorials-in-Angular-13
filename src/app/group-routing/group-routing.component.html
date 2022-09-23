@@ -1,1 +1,20 @@
-<p>group-routing works!</p>
+<section class="container mt-5 border">
+    <h1 class="fw-bold text-danger">group-routing Component Works</h1>
+    <br><hr><br>
+    <h2 class="text-success">Admin pages</h2>
+    <ul class="list-group">
+        <li class="list-group-item border-0"><a routerLink="admin/list">List</a></li>
+        <li class="list-group-item border-0"><a routerLink="admin/login">Login</a></li>
+    </ul>
+
+    <br><hr><br>
+    <h2 class="text-success">User pages</h2>
+    <ul class="list-group">
+        <li class="list-group-item border-0"><a routerLink="user/list">List</a></li>
+        <li class="list-group-item border-0"><a routerLink="user/login">Login</a></li>
+    </ul>
+
+    <br><hr><br>
+    <router-outlet></router-outlet>
+
+</section>
