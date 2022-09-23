@@ -30,11 +30,7 @@ import { ServicesComponent } from './services/services.component';
 import { FooterComponent } from './services/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { GroupRoutingComponent } from './group-routing/group-routing.component';
-import { AdminComponent } from './admin/admin.component';
-import { ListComponent } from './group-routing/admin/list/list.component';
-import { LoginComponent } from './group-routing/admin/login/login.component';
-import { UserComponent } from './group-routing/user/user.component'; 
+import { GroupRoutingModule } from './group-routing/group-routing.module';
 
 @NgModule({
   declarations: [
@@ -53,11 +49,6 @@ import { UserComponent } from './group-routing/user/user.component';
     ToDoListComponent,
     ServicesComponent,
     FooterComponent,
-    GroupRoutingComponent,
-    AdminComponent,
-    ListComponent,
-    LoginComponent,
-    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +65,8 @@ import { UserComponent } from './group-routing/user/user.component';
     CustomFormModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GroupRoutingModule,
   ],
   exports: [CustomPipePipe],
   providers: [],
