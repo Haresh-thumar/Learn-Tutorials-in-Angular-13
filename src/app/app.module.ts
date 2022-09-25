@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { GroupRoutingModule } from './group-routing/group-routing.module';
 import { GroupRoutingComponent } from './group-routing/group-routing.component';
+import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { GroupRoutingComponent } from './group-routing/group-routing.component';
     ToDoListComponent,
     ServicesComponent,
     FooterComponent,
-    GroupRoutingComponent
+    GroupRoutingComponent,
+    LazyLoadingComponent
   ],
   imports: [
     BrowserModule,
