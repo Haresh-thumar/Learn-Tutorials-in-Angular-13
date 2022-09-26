@@ -5,6 +5,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
 
+console.warn("admin module load");
+
 
 @NgModule({
   declarations: [
