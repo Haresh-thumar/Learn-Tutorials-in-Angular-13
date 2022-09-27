@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, HostListener } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,15 @@ import { FormsModule } from '@angular/forms';
 import { GroupRoutingModule } from './group-routing/group-routing.module';
 import { GroupRoutingComponent } from './group-routing/group-routing.component';
 import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +79,15 @@ import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    FlexLayoutModule,
     GroupRoutingModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
   ],
   exports: [CustomPipePipe],
   providers: [],
