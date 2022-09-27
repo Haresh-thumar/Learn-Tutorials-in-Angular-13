@@ -12,4 +12,8 @@ export class LazyLoadingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  close(){
+    
+  }
+
 }

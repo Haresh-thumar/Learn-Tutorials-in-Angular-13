@@ -1,14 +1,13 @@
-<div style="height: 100vh!important;">
+<div style="height: 100vh!important; position: fixed;">
   <mat-toolbar color="warn">
     <div class="nav-container">
       <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <button mat-icon-button (click)="sidenav.toggle(); close()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
         </button>
         <span>lazy-loading works...!</span>
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md>
-          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
           <!------- Admin Module ------->
           <button mat-button [matMenuTriggerFor]="menu">Admin Module</button>
           <mat-menu #menu="matMenu">
@@ -36,10 +35,10 @@
           <!------- User Module ------->
           <button mat-button [matMenuTriggerFor]="menu4">User Module</button>
           <mat-menu #menu4="matMenu">
-            <button mat-menu-item routerLink="user/services">Services</button>
-            <button mat-menu-item routerLink="user/sheets">Sheets</button>
-            <button mat-menu-item routerLink="user/signin">Signin</button>
-            <button mat-menu-item routerLink="user/signup">Signup</button>
+            <button mat-menu-item routerLink="user/services">Services Component</button>
+            <button mat-menu-item routerLink="user/sheets">Sheets Component</button>
+            <button mat-menu-item routerLink="user/signin">Signin Component</button>
+            <button mat-menu-item routerLink="user/signup">Signup Component</button>
           </mat-menu>
         </div>
       </mat-toolbar-row>
@@ -47,28 +46,43 @@
   </mat-toolbar>
 
   <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
+    <mat-sidenav #sidenav class="sidenav-drawer">
       <mat-nav-list>
-        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-        <!------- Admin Module ------->
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
+        <!-- <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
 
         <!------- Admin Module ------->
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <a mat-list-item [matMenuTriggerFor]="menu">Admin Module</a>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
+          <button mat-menu-item routerLink="admin/list">List Component</button>
+          <button mat-menu-item routerLink="admin/login">Login Component</button>
         </mat-menu>
-        <a href="#" mat-list-item>Menu Item 1</a>
-        <a href="#" mat-list-item>Menu Item 2</a>
-        <a href="#" mat-list-item>Menu Item 3</a>
-        <a href="#" mat-list-item>Menu Item 4</a>
-        <a href="#" mat-list-item>Menu Item 5</a>
-        <a href="#" mat-list-item>Menu Item 6</a>
+
+        <!------- Product Module ------->
+        <a mat-list-item [matMenuTriggerFor]="menu1">product Module</a>
+        <mat-menu #menu1="matMenu">
+          <button mat-menu-item routerLink="product/brand">Brand Component</button>
+          <button mat-menu-item routerLink="product/new-brand">New Brand Component</button>
+          <button mat-menu-item routerLink="product/refurb">Refurb Component</button>
+          <button mat-menu-item routerLink="product/second-hand">Second-Hand Component</button>
+        </mat-menu>
+
+        <!------- Student Module ------->
+        <a mat-list-item [matMenuTriggerFor]="menu3">Student Module</a>
+        <mat-menu #menu3="matMenu">
+          <button mat-menu-item routerLink="student/education">Education Component</button>
+          <button mat-menu-item routerLink="student/fees">Fees Component</button>
+          <button mat-menu-item routerLink="student/profile">Profile Component</button>
+        </mat-menu>
+
+        <!------- User Module ------->
+        <a mat-list-item [matMenuTriggerFor]="menu4">User Module</a>
+        <mat-menu #menu4="matMenu">
+          <button mat-menu-item routerLink="user/services">Services Component</button>
+          <button mat-menu-item routerLink="user/sheets">Sheets Component</button>
+          <button mat-menu-item routerLink="user/signin">Signin Component</button>
+          <button mat-menu-item routerLink="user/signup">Signup Component</button>
+        </mat-menu>
+
       </mat-nav-list>
     </mat-sidenav>
 
