@@ -42,6 +42,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-component.component';
+import { UnitComponentComponent } from './unit-component/unit-component.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-comp
     FooterComponent,
     GroupRoutingComponent,
     LazyLoadingComponent,
-    LazyLoadComponentComponent
+    LazyLoadComponentComponent,
+    UnitComponentComponent
   ],
   imports: [
     BrowserModule,
