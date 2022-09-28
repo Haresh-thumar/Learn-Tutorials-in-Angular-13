@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.warn('User Component Loaded');
+  }
 
   ngOnInit(): void {
   }

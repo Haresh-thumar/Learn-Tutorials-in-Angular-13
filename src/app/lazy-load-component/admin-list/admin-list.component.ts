@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminListComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.warn('Admin Component Loaded');
+  }
 
   ngOnInit(): void {
   }

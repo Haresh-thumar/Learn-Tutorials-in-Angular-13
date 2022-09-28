@@ -12,4 +12,20 @@ export class LazyLoadComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  async loadAdmin() {
+    this.viewContainer.clear();
+    const { AdminListComponent } = await import('./admin-list/admin-list.component');
+    this.viewContainer.createComponent(
+      this.cfr.resolveComponentFactory(AdminListComponent)
+    )
+  }
+
+  async loadUser() {
+    this.viewContainer.clear();
+    const { UserListComponent } = await import('./user-list/user-list.component');
+    this.viewContainer.createComponent(
+      this.cfr.resolveComponentFactory(UserListComponent)
+    )
+  }
+
 }
