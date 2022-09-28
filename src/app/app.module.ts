@@ -41,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-component.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { MatCardModule } from '@angular/material/card';
     ServicesComponent,
     FooterComponent,
     GroupRoutingComponent,
-    LazyLoadingComponent
+    LazyLoadingComponent,
+    LazyLoadComponentComponent
   ],
   imports: [
     BrowserModule,
