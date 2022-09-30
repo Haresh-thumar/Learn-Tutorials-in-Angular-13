@@ -43,6 +43,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-component.component';
 import { UnitComponentComponent } from './unit-component/unit-component.component';
+import { CreateDynamicComponentModule } from './create-dynamic-component/create-dynamic-component.module';
 
 
 @NgModule({
@@ -65,7 +66,7 @@ import { UnitComponentComponent } from './unit-component/unit-component.componen
     GroupRoutingComponent,
     LazyLoadingComponent,
     LazyLoadComponentComponent,
-    UnitComponentComponent
+    UnitComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +93,7 @@ import { UnitComponentComponent } from './unit-component/unit-component.componen
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    CreateDynamicComponentModule,
   ],
   exports: [CustomPipePipe],
   providers: [],
