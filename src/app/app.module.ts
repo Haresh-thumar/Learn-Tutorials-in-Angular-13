@@ -44,6 +44,8 @@ import { MatCardModule } from '@angular/material/card';
 import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-component.component';
 import { UnitComponentComponent } from './unit-component/unit-component.component';
 import { CreateDynamicComponentModule } from './create-dynamic-component/create-dynamic-component.module';
+import { TypeofModuleComponent } from './typeof-module/typeof-module.component';
+import { CompanyComponent } from './typeofModule/company/company.component';
 
 
 @NgModule({
@@ -67,6 +69,8 @@ import { CreateDynamicComponentModule } from './create-dynamic-component/create-
     LazyLoadingComponent,
     LazyLoadComponentComponent,
     UnitComponentComponent,
+    TypeofModuleComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,

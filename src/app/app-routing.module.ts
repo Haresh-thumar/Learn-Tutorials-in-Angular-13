@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+const routes: Routes = [{ path: 'company', loadChildren: () => import('./typeof-module/company/company/company.module').then(m => m.CompanyModule) },
+  { path: 'person', loadChildren: () => import('./typeof-module/person/person/person.module').then(m => m.PersonModule) }
   /*------- Lazy Load Modules ---------*/
   // {path:'', redirectTo:'lazyLoading', pathMatch:'full'},
   // {path: 'admin', loadChildren: ()=> import('./lazy-loading/admin/admin.module').then(mod=>mod.AdminModule) },
