@@ -1,0 +1,48 @@
+<!--==============================================================================================
+                                        @ViewChild Decorator
+===============================================================================================-->
+<section class="container text-center mt-5">
+  <h2 class="text-primary">----------- @ViewChild Decorator -----------</h2>
+  <p>parent works!</p>
+  <br>
+  <h3 class="fw-bold">using view-child decorator</h3>
+  <button class="btn btn-success ms-2" type="button" (click)="increase()">Increase</button>
+  <button class="btn btn-danger ms-3" type="button" (click)="decrease()">Decrease</button>
+  <br><br>
+  <app-child></app-child>
+</section>
+<br>
+<hr>
+
+
+<!--==============================================================================================
+                              @view-child using custom directive
+===============================================================================================-->
+<section class="container text-center mt-4">
+  <h2 class="text-primary">----------- @ViewChild Decorator using custom directive -----------</h2>
+
+  <h3 appChangeColor>Change My Color</h3>
+  <div>
+    change color :
+    <input type="radio" name="rd" (click)="changecolor('Green')"> Green
+    <input type="radio" name="rd" (click)="changecolor('Blue')"> Blue
+    <input type="radio" name="rd" (click)="changecolor('cyan')"> Cyan
+  </div>
+</section>
+<br>
+<hr>
+
+
+<!--==============================================================================================
+                              @view-child using Template Variables
+===============================================================================================-->
+<section class="container text-center mt-4">
+  <h2 class="text-primary">----------- @ViewChild Decorator Using Template Variables -----------</h2>
+
+  <div>
+    Name : <input type="text" #name><br><br>
+    State : <input type="text" #state>
+  </div>
+</section>
+<br>
+<hr>

@@ -44,6 +44,8 @@ import { MatCardModule } from '@angular/material/card';
 import { LazyLoadComponentComponent } from './lazy-load-component/lazy-load-component.component';
 import { UnitComponentComponent } from './unit-component/unit-component.component';
 import { CreateDynamicComponentModule } from './create-dynamic-component/create-dynamic-component.module';
+import { ViewChildDecoratorComponent } from './view-child-decorator/view-child-decorator.component';
+import { ViewChildDecoratorModule } from './view-child-decorator/view-child-decorator.module';
 
 
 @NgModule({
@@ -67,11 +69,12 @@ import { CreateDynamicComponentModule } from './create-dynamic-component/create-
     LazyLoadingComponent,
     LazyLoadComponentComponent,
     UnitComponentComponent,
+    ViewChildDecoratorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ParentModuleModule,
+    // ParentModuleModule,
     DataBindingModule,
     DirectivesModule,
     ChildToParentModule,
@@ -94,6 +97,7 @@ import { CreateDynamicComponentModule } from './create-dynamic-component/create-
     MatMenuModule,
     MatCardModule,
     CreateDynamicComponentModule,
+    ViewChildDecoratorModule,
   ],
   exports: [CustomPipePipe],
   providers: [],
