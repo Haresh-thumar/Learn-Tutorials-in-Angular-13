@@ -1,27 +1,44 @@
-# Angular13Learning
+# Learn Tutorials in Angular-13
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
-## Development server
+<h2>* Topics</h2>
+<ul>
+  <li>Child to Parent Data</li>
+  <li>Prent to Child Data</li>
+  <li>Passing Data Input-Output Decorator</li>
+  <li>Content-Projection</li>
+  <li>Create Dynamic Component</li>
+  <li>Custom Routing</li>
+  <li>Data Binding</li>
+  <li>Directives</li>
+  <li>Template-Driven-Form | Reactive Form</li>
+  <li>Github TYpe Example</li>
+  <li>Group Routing</li>
+  <li>Host-Listener | Host-Binding</li>
+  <li>Lazy-Load Component</li>
+  <li>Lazy Loading</li>
+  <li>Life-cycle-hook</li>
+  <li>Module</li>
+  <li>ng-container</li>
+  <li>ng-template-outlet</li>
+  <li>ng-templete</li>
+  <li>Pipes</li>
+  <li>Services</li>
+  <li>Templete-Reference variable</li>
+  <li>To-Do-List Example</li>
+  <li>Unit Component</li>
+  <li>View-Child Decorator</li>
+</ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ 
+<h2>* Project Code Structure</h2>
 
-## Code scaffolding
+![image](https://user-images.githubusercontent.com/100337599/209546489-bbce42b1-4b66-48d5-9053-2c3958d3a42e.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h2>* Build & Run Project</h2>
+<ul>
+  <li>ng build</li>
+  <li>ng serve | npm start</li>
+</ul>
